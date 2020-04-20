@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name='HP_Awareness_App'
