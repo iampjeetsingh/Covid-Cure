@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "647585410467",
+    "firebase_url": "https://hp-awareness-app.firebaseio.com",
+    "project_id": "hp-awareness-app",
+    "storage_bucket": "hp-awareness-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:647585410467:android:52812bcd2e6a25f3a47e16",
+        "android_client_info": {
+          "package_name": "com.hpawareness.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "647585410467-a8svv5288nop1sc787p7jtnjmjrcqtkq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApXizgC0kTesaT3GM56n8bMzAw8cHc-hw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "647585410467-a8svv5288nop1sc787p7jtnjmjrcqtkq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
