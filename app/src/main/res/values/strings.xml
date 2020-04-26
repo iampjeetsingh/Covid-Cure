@@ -3,4 +3,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="article_title">IT Giant Cognizant Hit by \'Maze\' Ransomware, Certain Clients Face Service Issues</string>
+    <string name="article_body">
+        Cognizant Technology Solutions Corp on Saturday said it was hit by a “Maze” ransomware cyberattack, resulting in service disruptions for some of its clients. The information technology services provider said it was taking steps to contain the incident, with the help of cyber defense companies, and has also engaged with law enforcement authorities.\n
+        Ransomware is a type of malicious program used by hackers to take control of files in an infected system and then demand hefty payments to recover them. According to cybersecurity firm McAfee, hackers who deploy Maze threaten to release information on the internet if the targeted companies fail to pay.</string>
 </resources>
