@@ -8,4 +8,32 @@
     <string name="article_body">
         Cognizant Technology Solutions Corp on Saturday said it was hit by a “Maze” ransomware cyberattack, resulting in service disruptions for some of its clients. The information technology services provider said it was taking steps to contain the incident, with the help of cyber defense companies, and has also engaged with law enforcement authorities.\n
         Ransomware is a type of malicious program used by hackers to take control of files in an infected system and then demand hefty payments to recover them. According to cybersecurity firm McAfee, hackers who deploy Maze threaten to release information on the internet if the targeted companies fail to pay.</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_updates">Covid Updates</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="home_second">Home Second</string>
+
+
+    <string-array name="districts">
+        <item>Bilaspur</item>
+        <item>Chamba</item>
+        <item>Hamirpur</item>
+        <item>Kangra</item>
+        <item>Kinnaur</item>
+        <item>Kullu</item>
+        <item>Lahaul and Spiti</item>
+        <item>Mandi</item>
+        <item>Shimla</item>
+        <item>Sirmaur</item>
+        <item>Solan</item>
+        <item>Una</item>
+    </string-array>
 </resources>
