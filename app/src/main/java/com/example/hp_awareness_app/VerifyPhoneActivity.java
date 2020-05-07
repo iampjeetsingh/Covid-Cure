@@ -96,6 +96,8 @@ public class VerifyPhoneActivity extends AppCompatActivity {
             if (code != null) {
                 editText.setText(code);
                 verifyCode(code);
+            }else{
+                signInWithCredential(phoneAuthCredential);
             }
         }
 
