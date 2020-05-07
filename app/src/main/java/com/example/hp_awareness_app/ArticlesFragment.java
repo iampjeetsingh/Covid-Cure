@@ -26,20 +26,20 @@ import com.google.firebase.database.FirebaseDatabase;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SecondFragment extends Fragment {
+public class ArticlesFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private DatabaseReference reference;
     private Context context = getContext();
 
-    public SecondFragment() {
+    public ArticlesFragment() {
         // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_second, container, false);
+        View view = inflater.inflate(R.layout.fragment_articles, container, false);
         // Inflate the layout for this fragment
         recyclerView = view.findViewById(R.id.recyclerView);
         reference = FirebaseDatabase.getInstance().getReference().child("Articles");

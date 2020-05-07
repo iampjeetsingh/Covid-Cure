@@ -20,6 +20,8 @@ public class CovidUpdatesFragment extends Fragment {
     private FirebaseRecyclerAdapter<Updates, UpdatesViewHolder> firebaseRecyclerAdapter;
     private DatabaseReference ref;
 
+    public CovidUpdatesFragment() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -30,8 +32,6 @@ public class CovidUpdatesFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        getActivity().findViewById(R.id.fragment_container).setVisibility(View.GONE);
-        getActivity().findViewById(R.id.bottomNavigation).setVisibility(View.GONE);
         recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         ref = FirebaseDatabase.getInstance().getReference().child("Updates");

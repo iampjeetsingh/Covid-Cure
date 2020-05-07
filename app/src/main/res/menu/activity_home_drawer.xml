@@ -8,10 +8,16 @@
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/menu_home" />
+
         <item
-            android:id="@+id/nav_updates"
+            android:id="@+id/nav_what_is_covid"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_updates" />
+            android:title="@string/menu_what_is_covid" />
+
+        <item
+            android:id="@+id/nav_faq"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/menu_faq" />
 
         <item
             android:id="@+id/nav_contributors"

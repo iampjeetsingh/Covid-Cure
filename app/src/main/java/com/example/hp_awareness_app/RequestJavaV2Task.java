@@ -40,6 +40,6 @@ public class RequestJavaV2Task extends AsyncTask<Void, Void, DetectIntentRespons
 
     @Override
     protected void onPostExecute(DetectIntentResponse response) {
-        ThirdFragment.getInstance().callbackV2(response);
+        FaqFragment.getInstance().callbackV2(response);
     }
 }

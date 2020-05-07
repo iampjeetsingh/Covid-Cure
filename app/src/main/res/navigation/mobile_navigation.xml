@@ -12,11 +12,16 @@
         tools:layout="@layout/fragment_home"/>
 
     <fragment
-        android:id="@+id/nav_updates"
-        android:name="com.example.hp_awareness_app.CovidUpdatesFragment"
-        android:label="@string/menu_updates"
-        tools:layout="@layout/fragment_covid_updates" />
+        android:id="@+id/nav_what_is_covid"
+        android:name="com.example.hp_awareness_app.WhatIsCovidFragment"
+        android:label="@string/menu_what_is_covid"
+        tools:layout="@layout/fragment_what_is_covid" />
 
+    <fragment
+        android:id="@+id/nav_faq"
+        android:name="com.example.hp_awareness_app.FaqFragment"
+        android:label="@string/menu_faq"
+        tools:layout="@layout/fragment_faq" />
 
     <fragment
         android:id="@+id/nav_contributors"

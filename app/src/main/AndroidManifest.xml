@@ -12,14 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".PhoneActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AddArticle" />
         <activity android:name=".ViewArticle" />
         <activity android:name=".VerifyPhoneActivity" />
-        <activity android:name=".PhoneActivity">
+        <activity android:name=".SplashScreen" android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

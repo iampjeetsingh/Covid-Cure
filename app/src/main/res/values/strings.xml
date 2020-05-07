@@ -17,10 +17,9 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_updates">Covid Updates</string>
+    <string name="menu_what_is_covid">What is COVID-19</string>
+    <string name="menu_faq">Frequently Asked Questions</string>
     <string name="menu_contributors">Contributors</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="home_second">Home Second</string>
 
 
     <string-array name="districts">

@@ -38,17 +38,9 @@ import java.util.Objects;
 import java.util.UUID;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class ThirdFragment extends Fragment {
+public class FaqFragment extends Fragment {
 
-    private static ThirdFragment instance;
-
-    public ThirdFragment() {
-        // Required empty public constructor
-    }
-
+    private static FaqFragment instance;
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final int USER = 10001;
     private static final int BOT = 10002;
@@ -67,7 +59,9 @@ public class ThirdFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_third, container, false);
+        getActivity().findViewById(R.id.fragment_container).setVisibility(View.GONE);
+        getActivity().findViewById(R.id.bottomNavigation).setVisibility(View.GONE);
+        View view = inflater.inflate(R.layout.fragment_faq, container, false);
 
         instance = this;
         Rect displayRectangle = new Rect();
@@ -147,7 +141,7 @@ public class ThirdFragment extends Fragment {
         return view;
     }
 
-    static ThirdFragment getInstance() {
+    static FaqFragment getInstance() {
         return instance;
     }
 
