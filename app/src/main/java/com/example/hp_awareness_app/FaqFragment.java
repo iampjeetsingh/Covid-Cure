@@ -64,22 +64,6 @@ public class FaqFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_faq, container, false);
 
         instance = this;
-        Rect displayRectangle = new Rect();
-        Window window = Objects.requireNonNull(getActivity()).getWindow();
-        window.getDecorView().getWindowVisibleDisplayFrame(displayRectangle);
-        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(),R.style.CustomAlertDialog);
-        ViewGroup viewGroup = getActivity().findViewById(android.R.id.content);
-        View dialogView = LayoutInflater.from(getContext()).inflate(R.layout.help_desk_basic, viewGroup, false);
-        dialogView.setMinimumWidth((int)(displayRectangle.width() * 1f));
-        dialogView.setMinimumHeight((int)(displayRectangle.height() * 1f));
-        builder.setView(dialogView);
-        final AlertDialog alertDialog = builder.create();
-        EditText user_name = dialogView.findViewById(R.id.user_name);
-        EditText user_age = dialogView.findViewById(R.id.user_age);
-        EditText user_gender = dialogView.findViewById(R.id.user_gender);
-
-
-
 
         final ScrollView scrollview = view.findViewById(R.id.chatScrollView);
         scrollview.post(() -> scrollview.fullScroll(ScrollView.FOCUS_DOWN));
@@ -91,9 +75,6 @@ public class FaqFragment extends Fragment {
         sendBtn.setOnClickListener(this::sendMessage);
 
         queryEditText = view.findViewById(R.id.queryEditText);
-
-
-
 
         queryEditText.setOnKeyListener((v, keyCode, event) -> {
             if (event.getAction() == KeyEvent.ACTION_DOWN) {
@@ -109,32 +90,11 @@ public class FaqFragment extends Fragment {
             return false;
         });
 
-        Button buttonOk=dialogView.findViewById(R.id.buttonOk);
-        buttonOk.setOnClickListener(v -> {
-            UserName = user_name.getText().toString();
-            Age = user_age.getText().toString();
-            Gender = user_gender.getText().toString();
+        UserName = "USER";
 
-            if(TextUtils.isEmpty(user_name.getText()) || TextUtils.isEmpty(user_age.getText()) ||TextUtils.isEmpty(user_gender.getText()))
-            {
-                if(TextUtils.isEmpty(user_name.getText())) {
-                    user_name.setError("field is Required");
-                }
-                if(TextUtils.isEmpty(user_age.getText())) {
-                    user_age.setError("field is Required");
-                }
-                if(TextUtils.isEmpty(user_gender.getText())) {
-                    user_gender.setError("field is Required");
-                }
-            }
-            else{
-                showTextView("Hello " + UserName,BOT);
+        showTextView("Welcome to the FAQ" ,BOT);
+        showTextView("Hello " + UserName + " !!",BOT);
 
-                alertDialog.dismiss();
-            }
-
-        });
-        alertDialog.show();
         // Java V2
         initV2Chatbot();
         // Inflate the layout for this fragment
