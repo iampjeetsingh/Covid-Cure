@@ -18,6 +18,7 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_updates">Covid Updates</string>
+    <string name="menu_contributors">Contributors</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="home_second">Home Second</string>
 

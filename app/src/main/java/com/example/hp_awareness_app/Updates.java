@@ -1,18 +1,18 @@
 package com.example.hp_awareness_app;
 
 public class Updates {
-    private String district;
+    private String location;
     private int confirmed,confirmedDelta,recovered, recoveredDelta,deceased,deceasedDelta;
 
     public Updates() {
     }
 
-    public String getDistrict() {
-        return district;
+    public String getLocation() {
+        return location;
     }
 
-    public void setDistrict(String district) {
-        this.district = district;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public int getConfirmed() {

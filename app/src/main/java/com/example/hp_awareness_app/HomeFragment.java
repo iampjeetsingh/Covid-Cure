@@ -25,5 +25,6 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getActivity().findViewById(R.id.fragment_container).setVisibility(View.VISIBLE);
+        getActivity().findViewById(R.id.bottomNavigation).setVisibility(View.VISIBLE);
     }
 }

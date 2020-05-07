@@ -11,14 +11,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class CovidUpdatesFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private FirebaseRecyclerAdapter<Updates, UpdatesViewHolder> firebaseRecyclerAdapter;
+    private DatabaseReference ref;
+
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_covid_updates, container, false);
     }
 
@@ -27,26 +31,22 @@ public class CovidUpdatesFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getActivity().findViewById(R.id.fragment_container).setVisibility(View.GONE);
+        getActivity().findViewById(R.id.bottomNavigation).setVisibility(View.GONE);
         recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        ref = FirebaseDatabase.getInstance().getReference().child("Updates");
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Updates, UpdatesViewHolder>() {
+        firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Updates, UpdatesViewHolder>(Updates.class,R.layout.updates_row,UpdatesViewHolder.class,ref) {
             @Override
-            protected void onBindViewHolder(@NonNull UpdatesViewHolder updatesViewHolder, int i, @NonNull Updates updates) {
-                
+            protected void populateViewHolder(UpdatesViewHolder updatesViewHolder, Updates updates, int i) {
+                updatesViewHolder.setData(updates);
             }
-
-            @NonNull
-            @Override
-            public UpdatesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                return null;
-            }
-        }
-
+        };
+        recyclerView.setAdapter(firebaseRecyclerAdapter);
     }
 
     public static class UpdatesViewHolder extends RecyclerView.ViewHolder{
@@ -66,10 +66,10 @@ public class CovidUpdatesFragment extends Fragment {
             confirmeddeltatxt.setVisibility(View.VISIBLE);
             recovereddeltatxt.setVisibility(View.VISIBLE);
             deceaseddeltatxt.setVisibility(View.VISIBLE);
-            locationtxt.setText(updates.getDistrict());
-            confirmedtxt.setText(updates.getConfirmed());
-            recoveredtxt.setText(updates.getRecovered());
-            deceasedtxt.setText(updates.getDeceased());
+            locationtxt.setText(String.valueOf(updates.getLocation()));
+            confirmedtxt.setText(String.valueOf(updates.getConfirmed()));
+            recoveredtxt.setText(String.valueOf(updates.getRecovered()));
+            deceasedtxt.setText(String.valueOf(updates.getDeceased()));
             confirmeddeltatxt.setText(delta(updates.getConfirmedDelta()));
             recovereddeltatxt.setText(delta(updates.getRecoveredDelta()));
             deceaseddeltatxt.setText(delta(updates.getDeceasedDelta()));
@@ -77,10 +77,10 @@ public class CovidUpdatesFragment extends Fragment {
 
         private String delta(int n){
             if(n>0)
-                return "↑";
+                return "↑ "+n;
             else if(n<0)
-                return "↓";
-            return "";
+                return "↓ "+n;
+            return ""+n;
         }
     }
 }
