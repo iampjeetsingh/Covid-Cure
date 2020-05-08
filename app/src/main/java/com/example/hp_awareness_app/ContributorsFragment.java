@@ -15,7 +15,7 @@ import java.util.List;
 
 public class ContributorsFragment extends Fragment {
 
-    private String[] names = new String[]{"Divyanshu Thakur","Naveen Katiyar","Arjun Anand","Vishal Pal","Janmejai Pandey","Paramjeet","Devang Sharma"};
+    private String[] names = new String[]{"Divyansh Thakur","Naveen Katiyar","Arjun Anand","Vishal Pal","Janmejai Pandey","Paramjeet","Devang Sharma"};
     private String[] descriptions = new String[]{"","","","","","",""};
     private int[] images = new int[]{0,0,R.drawable.arjun,R.drawable.vishal,R.drawable.janmejai,R.drawable.paramjeet,R.drawable.devang};
 

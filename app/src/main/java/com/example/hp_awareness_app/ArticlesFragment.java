@@ -11,26 +11,38 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ArticlesFragment extends Fragment {
+public class ArticlesFragment extends Fragment implements IFirebaseLoadDone, ValueEventListener {
 
     private RecyclerView recyclerView;
     private DatabaseReference reference;
     private Context context = getContext();
+
+    ViewPager viewPager;
+    ArticleAdapter adapter;
+
+    IFirebaseLoadDone iFirebaseLoadDone;
 
     public ArticlesFragment() {
         // Required empty public constructor
@@ -41,11 +53,17 @@ public class ArticlesFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_articles, container, false);
         // Inflate the layout for this fragment
-        recyclerView = view.findViewById(R.id.recyclerView);
         reference = FirebaseDatabase.getInstance().getReference().child("Articles");
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context);
-        recyclerView.setLayoutManager(layoutManager);
+        iFirebaseLoadDone = this;
+
+        loadArticle();
+        viewPager = (ViewPager)view.findViewById(R.id.view_pager);
+
         return view;
+    }
+
+    private void loadArticle() {
+        reference.addValueEventListener(this);
     }
 
     @Override
@@ -55,54 +73,63 @@ public class ArticlesFragment extends Fragment {
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-        ArticleAdapter articleAdapter = new ArticleAdapter(reference) {
-            @Override
-            public void populateViewHolder(ArticleViewHolder holder, Article article, int position) {
-                if (article != null) {
-                    holder.setArticle(article);
-                    holder.setOnClickListener((v) -> {
-                        Intent intent = new Intent(getActivity(), ViewArticle.class);
-                        intent.putExtra("url", article.getLink());
-                        startActivity(intent);
-                    });
-                } else
-                    holder.hide();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.e("MainActivity", databaseError.getMessage());
-            }
-        };
-        recyclerView.setAdapter(articleAdapter);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-    }
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.main_activity_menu, menu);
-//        return true;
-//    }
-
-    @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.main_activity_menu, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
 
-        @Override
+    @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-            if (item.getItemId() == R.id.action_add) {
-                Intent intent = new Intent(getActivity(), AddArticle.class);
-                startActivity(intent);
-                return true;
-            }
+        if (item.getItemId() == R.id.action_add) {
+            Intent intent = new Intent(getActivity(), AddArticle.class);
+            startActivity(intent);
+            return true;
+        }
         return false;
+    }
+
+    @Override
+    public void onFirebaseLoadSuccess(List<Article> articleList) {
+        adapter = new ArticleAdapter(getActivity(),articleList);
+        viewPager.setAdapter(adapter);
+        viewPager.setPadding(100, 0, 100, 0);
+    }
+
+    @Override
+    public void onFirebaseLoadFailed(String message) {
+        Toast.makeText(getActivity(),""+message,Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+        List<Article> articleList = new ArrayList<>();
+        for(DataSnapshot articleSnapshot:dataSnapshot.getChildren())
+            articleList.add(articleSnapshot.getValue(Article.class));
+        iFirebaseLoadDone.onFirebaseLoadSuccess(articleList);
+
+    }
+
+    @Override
+    public void onCancelled(@NonNull DatabaseError databaseError) {
+        iFirebaseLoadDone.onFirebaseLoadFailed(databaseError.getMessage());
+    }
+
+    @Override
+    public void onDestroy() {
+        reference.removeEventListener(this);
+        super.onDestroy();
+    }
+
+    @Override
+    public void onResume() {
+
+        super.onResume();
+        reference.addValueEventListener(this);
+    }
+
+    @Override
+    public void onStop() {
+        reference.removeEventListener(this);
+        super.onStop();
     }
 }
