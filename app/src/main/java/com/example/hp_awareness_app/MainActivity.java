@@ -3,6 +3,8 @@ package com.example.hp_awareness_app;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import androidx.annotation.NonNull;
@@ -19,10 +21,14 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     private AppBarConfiguration mAppBarConfiguration;
     BottomNavigationView bottomNavigationView;
 
+    static String type = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        type = getIntent().getStringExtra("type");
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -37,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         bottomNavigationView = findViewById(R.id.bottomNavigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.item1);
+
     }
 
     @Override

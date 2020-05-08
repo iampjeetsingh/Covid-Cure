@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".PhoneActivity">
 
-    <RelativeLayout
+        <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -14,9 +14,11 @@
 
 <!--        add Logo Here-->
 
-    </RelativeLayout>
 
-    <ImageView
+        </RelativeLayout>
+
+
+        <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="120dp"
@@ -50,7 +52,7 @@
 
         <EditText
             android:id="@+id/editTextPhone"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:digits="0123456789"
@@ -59,15 +61,34 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/linearLayoutButtonLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayout"
+        android:orientation="horizontal"
+        android:padding="15dp">
+
     <Button
         android:id="@+id/buttonContinue"
         android:layout_width="150dp"
+        android:layout_marginStart="20dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/linearLayout"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="start"
         android:background="@color/colorPrimary"
-        android:text="Continue"
+        android:text="Login"
         android:textAllCaps="false"
         android:textColor="#ffffff" />
 
+    <Button
+        android:id="@+id/btnAdminLogin"
+        android:layout_width="150dp"
+        android:layout_marginStart="20dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="Admin Login"
+        android:layout_gravity="end"
+        android:textAllCaps="false"
+        android:textColor="#ffffff" />
+    </LinearLayout>
 </RelativeLayout>

@@ -28,6 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 /**
@@ -59,6 +60,7 @@ public class ArticlesFragment extends Fragment implements IFirebaseLoadDone, Val
         loadArticle();
         viewPager = (ViewPager)view.findViewById(R.id.view_pager);
 
+
         return view;
     }
 
@@ -70,6 +72,21 @@ public class ArticlesFragment extends Fragment implements IFirebaseLoadDone, Val
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onPrepareOptionsMenu(@NonNull Menu menu) {
+        MenuItem add_item = menu.findItem(R.id.action_add);
+        String type = MainActivity.type;
+        if(Objects.equals(type, "Admin"))
+        {
+            add_item.setVisible(true);
+        }
+        else
+        {
+            add_item.setVisible(false);
+        }
+        super.onPrepareOptionsMenu(menu);
     }
 
     @Override

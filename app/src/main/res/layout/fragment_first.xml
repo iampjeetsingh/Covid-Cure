@@ -23,12 +23,32 @@
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
             android:textColor="@color/colorPrimary" />
 
+        <TextView
+            android:id="@+id/loginType"
+            android:layout_width="wrap_content"
+            android:layout_below="@id/textView"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:text="@string/login_type" />
+        <Button
+            android:id="@+id/btnAddAdmin"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/loginType"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            android:background="@color/colorPrimary"
+            android:text="Add Admin"
+            android:textAllCaps="false"
+            android:textColor="#ffffff" />
 
         <Button
             android:id="@+id/buttonLogout"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textView"
+            android:layout_below="@id/btnAddAdmin"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:background="@color/colorPrimary"
