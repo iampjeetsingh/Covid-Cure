@@ -1,5 +1,6 @@
 package com.example.hp_awareness_app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -10,9 +11,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Objects;
 
 public class CovidUpdatesFragment extends Fragment {
 
@@ -40,10 +45,20 @@ public class CovidUpdatesFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
+        String type = MainActivity.type;
         firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Updates, UpdatesViewHolder>(Updates.class,R.layout.updates_row,UpdatesViewHolder.class,ref) {
             @Override
             protected void populateViewHolder(UpdatesViewHolder updatesViewHolder, Updates updates, int i) {
-                updatesViewHolder.setData(updates);
+
+
+                    updatesViewHolder.setData(updates, v -> {
+                        if (Objects.equals(type, "Admin")) {
+                            Intent intent = new Intent(getActivity(), UpdateCasesActivity.class);
+                            intent.putExtra("update_id", firebaseRecyclerAdapter.getRef(i).getKey());
+                            startActivity(intent);
+                        }
+                    });
+
             }
         };
         recyclerView.setAdapter(firebaseRecyclerAdapter);
@@ -62,7 +77,7 @@ public class CovidUpdatesFragment extends Fragment {
             deceaseddeltatxt = itemView.findViewById(R.id.deceased_delta);
         }
 
-        public void setData(Updates updates){
+        void setData(Updates updates, View.OnClickListener clickListener){
             confirmeddeltatxt.setVisibility(View.VISIBLE);
             recovereddeltatxt.setVisibility(View.VISIBLE);
             deceaseddeltatxt.setVisibility(View.VISIBLE);
@@ -73,7 +88,10 @@ public class CovidUpdatesFragment extends Fragment {
             confirmeddeltatxt.setText(delta(updates.getConfirmedDelta()));
             recovereddeltatxt.setText(delta(updates.getRecoveredDelta()));
             deceaseddeltatxt.setText(delta(updates.getDeceasedDelta()));
+
+            itemView.setOnClickListener(clickListener);
         }
+
 
         private String delta(int n){
             if(n>0)
