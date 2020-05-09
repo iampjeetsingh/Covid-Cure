@@ -2,7 +2,7 @@ package com.example.hp_awareness_app;
 
 public class Updates {
     private String location;
-    private int confirmed,confirmedDelta,recovered, recoveredDelta,deceased,deceasedDelta;
+    private int confirmed,confirmedDelta,recovered, recoveredDelta,deceased,deceasedDelta,active,activeDelta;
 
     public Updates() {
     }
@@ -45,6 +45,22 @@ public class Updates {
 
     public void setRecoveredDelta(int recoveredDelta) {
         this.recoveredDelta = recoveredDelta;
+    }
+
+    public int getActive() {
+        return active;
+    }
+
+    public void setActive(int active) {
+        this.active = active;
+    }
+
+    public int getActiveDelta() {
+        return activeDelta;
+    }
+
+    public void setActiveDelta(int activeDelta) {
+        this.activeDelta = activeDelta;
     }
 
     public int getDeceased() {

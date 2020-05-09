@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_column="0"
             android:layout_marginLeft="10dp"
-            android:text="deceased"
+            android:text="deaths"
             android:textSize="16sp" />
 
         <EditText
@@ -40,8 +40,48 @@
             android:layout_height="wrap_content"
             android:layout_column="0"
             android:layout_marginLeft="10dp"
+            android:text="active"
             android:layout_marginTop="20dp"
-            android:text="deceasedDelta"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editActive"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:padding="5dp"
+            />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:text="activeDelta"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editActiveDelta"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:padding="5dp"
+            />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:text="deathsDelta"
             android:textSize="16sp" />
 
         <EditText

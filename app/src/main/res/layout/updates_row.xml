@@ -28,7 +28,7 @@
             android:id="@+id/confirmed"
             android:textColor="@android:color/holo_red_light"
             android:textStyle="bold"
-            android:textAlignment="textEnd"
+            android:textAlignment="center"
             android:text="Confirmed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -37,8 +37,31 @@
             android:id="@+id/confirmed_delta"
             android:textSize="13sp"
             android:textColor="@android:color/holo_red_light"
-            android:textAlignment="textEnd"
+            android:textAlignment="center"
             android:text="↑Confirmed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/active"
+            android:textColor="@android:color/holo_blue_light"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:text="Active"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/active_delta"
+            android:textSize="13sp"
+            android:textColor="@android:color/holo_blue_light"
+            android:textAlignment="center"
+            android:text="↑Active"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>
@@ -51,7 +74,7 @@
             android:id="@+id/recovered"
             android:textColor="@android:color/holo_green_dark"
             android:textStyle="bold"
-            android:textAlignment="textEnd"
+            android:textAlignment="center"
             android:text="Recovered"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -60,8 +83,8 @@
             android:id="@+id/recovered_delta"
             android:textSize="13sp"
             android:textColor="@android:color/holo_green_dark"
-            android:textAlignment="textEnd"
-            android:text="↑Confirmed"
+            android:textAlignment="center"
+            android:text="↑Recovered"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>
@@ -74,8 +97,8 @@
             android:id="@+id/deceased"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:textAlignment="textEnd"
-            android:text="Deceased"
+            android:textAlignment="center"
+            android:text="Deaths"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <TextView
@@ -83,7 +106,7 @@
             android:id="@+id/deceased_delta"
             android:textSize="13sp"
             android:textColor="@color/black"
-            android:textAlignment="textEnd"
+            android:textAlignment="center"
             android:text="↑Confirmed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

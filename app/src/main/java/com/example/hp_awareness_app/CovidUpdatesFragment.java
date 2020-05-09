@@ -14,8 +14,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
 
@@ -30,7 +33,50 @@ public class CovidUpdatesFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_covid_updates, container, false);
+        View view = inflater.inflate(R.layout.fragment_covid_updates, container, false);
+
+
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Updates");
+
+
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                int confirmed = 0;
+                int active = 0;
+                int recovered = 0;
+                int deceased = 0;
+
+                TextView total_confirmed = view.findViewById(R.id.text_total_confirmed);
+                TextView total_active = view.findViewById(R.id.text_total_active);
+                TextView total_deceased = view.findViewById(R.id.text_total_deceased);
+                TextView total_recovered = view.findViewById(R.id.text_total_recovered);
+
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    Updates updates = snapshot.getValue(Updates.class);
+
+                    confirmed += updates.getConfirmed();
+                    active += updates.getActive();
+                    recovered += updates.getRecovered();
+                    deceased += updates.getDeceased();
+
+                }
+
+                total_active.setText(Integer.toString(active));
+                total_confirmed.setText(Integer.toString(confirmed));
+                total_deceased.setText(Integer.toString(deceased));
+                total_recovered.setText(Integer.toString(recovered));
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+            }
+        });
+
+
+        return view;
     }
 
 
@@ -65,7 +111,7 @@ public class CovidUpdatesFragment extends Fragment {
     }
 
     public static class UpdatesViewHolder extends RecyclerView.ViewHolder{
-        private TextView locationtxt,confirmedtxt,recoveredtxt,deceasedtxt,confirmeddeltatxt,recovereddeltatxt,deceaseddeltatxt;
+        private TextView locationtxt,confirmedtxt,recoveredtxt,deceasedtxt,activetxt,confirmeddeltatxt,recovereddeltatxt,deceaseddeltatxt,activedeltatxt;
         public UpdatesViewHolder(@NonNull View itemView) {
             super(itemView);
             locationtxt = itemView.findViewById(R.id.location);
@@ -75,19 +121,24 @@ public class CovidUpdatesFragment extends Fragment {
             recovereddeltatxt = itemView.findViewById(R.id.recovered_delta);
             deceasedtxt = itemView.findViewById(R.id.deceased);
             deceaseddeltatxt = itemView.findViewById(R.id.deceased_delta);
+            activetxt = itemView.findViewById(R.id.active);
+            activedeltatxt = itemView.findViewById(R.id.active_delta);
         }
 
         void setData(Updates updates, View.OnClickListener clickListener){
             confirmeddeltatxt.setVisibility(View.VISIBLE);
             recovereddeltatxt.setVisibility(View.VISIBLE);
             deceaseddeltatxt.setVisibility(View.VISIBLE);
+            activedeltatxt.setVisibility(View.VISIBLE);
             locationtxt.setText(String.valueOf(updates.getLocation()));
             confirmedtxt.setText(String.valueOf(updates.getConfirmed()));
             recoveredtxt.setText(String.valueOf(updates.getRecovered()));
             deceasedtxt.setText(String.valueOf(updates.getDeceased()));
+            activetxt.setText(String.valueOf(updates.getActive()));
             confirmeddeltatxt.setText(delta(updates.getConfirmedDelta()));
             recovereddeltatxt.setText(delta(updates.getRecoveredDelta()));
             deceaseddeltatxt.setText(delta(updates.getDeceasedDelta()));
+            activedeltatxt.setText(delta(updates.getActiveDelta()));
 
             itemView.setOnClickListener(clickListener);
         }

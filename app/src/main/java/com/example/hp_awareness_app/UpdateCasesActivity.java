@@ -36,6 +36,8 @@ public class UpdateCasesActivity extends AppCompatActivity {
         EditText editDeceasedDelta = findViewById(R.id.editDeceasedDelta);
         EditText editConfirmed = findViewById(R.id.editConfirmed);
         EditText editConfirmedDelta = findViewById(R.id.editConfirmedDelta);
+        EditText editActive = findViewById(R.id.editActive);
+        EditText editActiveDelta = findViewById(R.id.editActiveDelta);
         Button btnUpdate = findViewById(R.id.btnUpdate);
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Updates").child(update_id);
@@ -52,14 +54,18 @@ public class UpdateCasesActivity extends AppCompatActivity {
                 int recoveredDelta = updates.getRecoveredDelta();
                 int confirmed = updates.getConfirmed();
                 int confirmedDelta = updates.getConfirmedDelta();
+                int active = updates.getActive();
+                int activeDelta = updates.getActiveDelta();
 
                 textLocation.setText(location);
                 editDeceased.setText(Integer.toString(deceased));
                 editRecovered.setText(Integer.toString(recovered));
                 editConfirmed.setText(Integer.toString(confirmed));
+                editActive.setText(Integer.toString(active));
                 editRecoveredDelta.setText(Integer.toString(recoveredDelta));
                 editConfirmedDelta.setText(Integer.toString(confirmedDelta));
                 editDeceasedDelta.setText(Integer.toString(deceasedDelta));
+                editActiveDelta.setText(Integer.toString(activeDelta));
             }
 
             @Override
@@ -79,6 +85,8 @@ public class UpdateCasesActivity extends AppCompatActivity {
                 updatedCase.setConfirmedDelta(Integer.parseInt(editConfirmedDelta.getText().toString()));
                 updatedCase.setRecoveredDelta(Integer.parseInt(editRecoveredDelta.getText().toString()));
                 updatedCase.setDeceasedDelta(Integer.parseInt(editDeceasedDelta.getText().toString()));
+                updatedCase.setActive(Integer.parseInt(editActive.getText().toString()));
+                updatedCase.setActiveDelta(Integer.parseInt(editActiveDelta.getText().toString()));
 
                 reference.setValue(updatedCase)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
