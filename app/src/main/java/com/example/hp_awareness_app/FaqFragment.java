@@ -1,20 +1,12 @@
 package com.example.hp_awareness_app;
 
-
-import android.graphics.Rect;
 import android.os.Bundle;
-
-import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
-
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -22,7 +14,6 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ServiceAccountCredentials;
@@ -32,11 +23,11 @@ import com.google.cloud.dialogflow.v2.SessionName;
 import com.google.cloud.dialogflow.v2.SessionsClient;
 import com.google.cloud.dialogflow.v2.SessionsSettings;
 import com.google.cloud.dialogflow.v2.TextInput;
-
 import java.io.InputStream;
-import java.util.Objects;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.UUID;
-
 
 public class FaqFragment extends Fragment {
 
@@ -51,16 +42,13 @@ public class FaqFragment extends Fragment {
 
     private SessionsClient sessionsClient;
     private SessionName session;
-    private String UserName = null;
-    private String Age = null;
-    private String Gender = null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        getActivity().findViewById(R.id.fragment_container).setVisibility(View.GONE);
-        getActivity().findViewById(R.id.bottomNavigation).setVisibility(View.GONE);
+        requireActivity().findViewById(R.id.fragment_container).setVisibility(View.GONE);
+        requireActivity().findViewById(R.id.bottomNavigation).setVisibility(View.GONE);
         View view = inflater.inflate(R.layout.fragment_faq, container, false);
 
         instance = this;
@@ -90,10 +78,10 @@ public class FaqFragment extends Fragment {
             return false;
         });
 
-        UserName = "USER";
+        String userName = "USER";
 
         showTextView("Welcome to the FAQ" ,BOT);
-        showTextView("Hello " + UserName + " !!",BOT);
+        showTextView("Hello " + userName + " !!",BOT);
 
         // Java V2
         initV2Chatbot();
@@ -163,12 +151,32 @@ public class FaqFragment extends Fragment {
 
     private FrameLayout getUserLayout() {
         LayoutInflater inflater = LayoutInflater.from(getActivity());
-        return (FrameLayout) inflater.inflate(R.layout.user_msg_layout, null);
+
+        FrameLayout frame = (FrameLayout) inflater.inflate(R.layout.user_msg_layout, null);
+
+        TextView bot_message_time = frame.findViewById(R.id.user_message_time);
+        Calendar calander = Calendar.getInstance();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm a");
+
+        String time = simpleDateFormat.format(calander.getTime());
+        bot_message_time.setText(time);
+
+        return frame;
     }
 
     private FrameLayout getBotLayout() {
         LayoutInflater inflater = LayoutInflater.from(getActivity());
-        return (FrameLayout) inflater.inflate(R.layout.bot_msg_layout, null);
+        FrameLayout frame = (FrameLayout) inflater.inflate(R.layout.bot_msg_layout, null);
+
+        TextView bot_message_time = frame.findViewById(R.id.bot_message_time);
+        Calendar calander = Calendar.getInstance();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm a");
+
+        String time = simpleDateFormat.format(calander.getTime());
+        bot_message_time.setText(time);
+
+
+        return frame;
     }
 
 }

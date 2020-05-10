@@ -1,5 +1,6 @@
 package com.example.hp_awareness_app;
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -98,5 +100,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 return true;
         }
 
+    }
+    public void logout(MenuItem item) {
+        FirebaseAuth.getInstance().signOut();
+
+        Intent intent = new Intent(MainActivity.this, PhoneActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+        startActivity(intent);
     }
 }
