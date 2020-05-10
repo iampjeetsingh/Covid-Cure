@@ -17,7 +17,7 @@
         <activity android:name=".AddAdminActivity" />
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_home"
+           android:label=""
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AddArticle" />
         <activity android:name=".ViewArticle" />

@@ -1,7 +1,7 @@
 package com.example.hp_awareness_app;
 
 public class Article {
-    private String ID, thumbnail, source, headLine, link;
+    private String ID, link;
     private Object timeStamp;
     private boolean visible;
 
@@ -16,29 +16,7 @@ public class Article {
         this.ID = ID;
     }
 
-    public String getThumbnail() {
-        return thumbnail;
-    }
 
-    public void setThumbnail(String thumbnail) {
-        this.thumbnail = thumbnail;
-    }
-
-    public String getHeadLine() {
-        return headLine;
-    }
-
-    public void setHeadLine(String headLine) {
-        this.headLine = headLine;
-    }
-
-    public String getSource() {
-        return source;
-    }
-
-    public void setSource(String source) {
-        this.source = source;
-    }
 
     public String getLink() {
         return link;

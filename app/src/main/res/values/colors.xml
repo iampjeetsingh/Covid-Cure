@@ -4,7 +4,12 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorWhite">#FFFFFF</color>
-
+    <color name="color5">#9C27B0</color>
+    <color name="color6">#7E57C2</color>
+    <color name="color7">#E64A19</color>
+    <color name="color8">#43A047</color>
+    <color name="color9">#1565C0</color>
+    <color name="color10">#6610f2</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
 </resources>

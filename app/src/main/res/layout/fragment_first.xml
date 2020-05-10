@@ -1,61 +1,311 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FirstFragment">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ProfileActivity">
+        android:orientation="vertical">
 
 
-        <TextView
-            android:id="@+id/textView"
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@drawable/home_background">
+
+
+            <TextView
+                android:id="@+id/CovidHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="Covid-19"
+                android:textAllCaps="true"
+                android:textColor="#fff"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/covidText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/CovidHeading"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:text="Every person is a soldier in this battle and also leading the battle."
+                android:textColor="#fff"
+                android:textSize="17sp" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ActiveLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/header"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="Welcome to Your Profile"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-            android:textColor="@color/colorPrimary" />
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_button"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Active Cases"
+                android:textColor="#fff"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/activeCase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="60000"
+                android:textColor="#fff"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/RecoverLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ActiveLayout"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custom_button_green"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Total Recovered"
+                android:textColor="#fff"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/RecoverCase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="20000"
+                android:textColor="#fff"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/DeathLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ActiveLayout"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/custom_button_red"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Deaths"
+                android:textColor="#fff"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/DeathCase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="1000"
+                android:textColor="#fff"
+                android:textSize="17sp" />
+
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/loginType"
+            android:id="@+id/preventionText"
             android:layout_width="wrap_content"
-            android:layout_below="@id/textView"
-            android:layout_centerHorizontal="true"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-            android:text="@string/login_type" />
-        <Button
-            android:id="@+id/btnAddAdmin"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/loginType"
-            android:layout_centerHorizontal="true"
+            android:layout_below="@id/DeathLayout"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
-            android:visibility="gone"
-            android:background="@color/colorPrimary"
-            android:text="Add Admin"
-            android:textAllCaps="false"
-            android:textColor="#ffffff" />
+            android:text="Prevention"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/buttonLogout"
-            android:layout_width="120dp"
+        <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/prevent1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/btnAddAdmin"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:background="@color/colorPrimary"
-            android:text="Logout"
-            android:textAllCaps="false"
-            android:textColor="#ffffff" />
+            android:layout_below="@id/preventionText"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical">
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="5dp"
+                app:srcCompat="@drawable/ic_prevention3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Wear a face mask" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/prevent2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/preventionText"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/prevent1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:srcCompat="@drawable/ic_prevention2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Wash your hands\n often till 20 sec " />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/prevent3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/preventionText"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/prevent2"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:srcCompat="@drawable/ic_prevention1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Maintain 6ft distance \n with each other " />
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/updateCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/prevent3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            app:cardCornerRadius="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#2962ff">
+
+                <TextView
+                    android:id="@+id/UpdateHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Latest Updates"
+                    android:textColor="#fff"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="5dp"
+                    app:srcCompat="@drawable/ic_info_outline_black_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/UpdateHeading"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Click on the above icon to get all the updates  related to Covid-19 from Government of India."
+                    android:textColor="#fff" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/updateCard"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/update_background"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:id="@+id/helpTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Need any help ?"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/helpContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/helpTitle"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="40dp"
+                android:text="For any help, send a message to the authority.You will receive a notification of authority's reply. "
+                android:textColor="#fff"
+              />
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_below="@id/helpTitle"
+                android:layout_alignParentRight="true"
+                app:srcCompat="@drawable/ic_arrow_forward_black_24dp"/>
+
+        </RelativeLayout>
     </RelativeLayout>
-
+    </ScrollView>
 </FrameLayout>

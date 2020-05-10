@@ -1,9 +1,11 @@
 package com.example.hp_awareness_app;
 
 
+import android.animation.ArgbEvaluator;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -20,6 +22,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import com.bumptech.glide.load.engine.bitmap_recycle.IntegerArrayAdapter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -58,9 +61,18 @@ public class ArticlesFragment extends Fragment implements IFirebaseLoadDone, Val
         iFirebaseLoadDone = this;
 
         loadArticle();
-        viewPager = (ViewPager)view.findViewById(R.id.view_pager);
+        viewPager = (ViewPager) view.findViewById(R.id.view_pager);
 
 
+        final LoadingDialog loadingDialog = new LoadingDialog(getActivity());
+        loadingDialog.startLoadingDialog();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                loadingDialog.dismissDialog();
+            }
+        }, 3000);
         return view;
     }
 
@@ -78,12 +90,9 @@ public class ArticlesFragment extends Fragment implements IFirebaseLoadDone, Val
     public void onPrepareOptionsMenu(@NonNull Menu menu) {
         MenuItem add_item = menu.findItem(R.id.action_add);
         String type = MainActivity.type;
-        if(Objects.equals(type, "Admin"))
-        {
+        if (Objects.equals(type, "Admin")) {
             add_item.setVisible(true);
-        }
-        else
-        {
+        } else {
             add_item.setVisible(false);
         }
         super.onPrepareOptionsMenu(menu);
@@ -107,20 +116,22 @@ public class ArticlesFragment extends Fragment implements IFirebaseLoadDone, Val
 
     @Override
     public void onFirebaseLoadSuccess(List<Article> articleList) {
-        adapter = new ArticleAdapter(getActivity(),articleList);
+        adapter = new ArticleAdapter(getActivity(), articleList);
         viewPager.setAdapter(adapter);
-        viewPager.setPadding(100, 0, 100, 0);
+        viewPager.setPadding(80, 10, 80, 10);
+
+
     }
 
     @Override
     public void onFirebaseLoadFailed(String message) {
-        Toast.makeText(getActivity(),""+message,Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "" + message, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
         List<Article> articleList = new ArrayList<>();
-        for(DataSnapshot articleSnapshot:dataSnapshot.getChildren())
+        for (DataSnapshot articleSnapshot : dataSnapshot.getChildren())
             articleList.add(articleSnapshot.getValue(Article.class));
         iFirebaseLoadDone.onFirebaseLoadSuccess(articleList);
 

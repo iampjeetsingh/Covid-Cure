@@ -19,7 +19,8 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/AppTheme.AppBarOverlay">
+            android:background="#6610f2"
+           >
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"

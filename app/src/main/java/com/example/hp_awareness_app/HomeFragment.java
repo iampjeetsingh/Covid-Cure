@@ -1,5 +1,6 @@
 package com.example.hp_awareness_app;
 
+import android.app.ActionBar;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
+
 
 import com.example.hp_awareness_app.R;
 
@@ -26,5 +27,7 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         getActivity().findViewById(R.id.fragment_container).setVisibility(View.VISIBLE);
         getActivity().findViewById(R.id.bottomNavigation).setVisibility(View.VISIBLE);
+
+
     }
 }

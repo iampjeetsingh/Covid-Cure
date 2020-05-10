@@ -2,8 +2,10 @@ package com.example.hp_awareness_app;
 
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -27,26 +29,29 @@ public class FirstFragment extends Fragment {
         // Required empty public constructor
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_first, container, false);
 
         String type = MainActivity.type;
-        TextView loginType = (TextView)view.findViewById(R.id.loginType);
-        loginType.setText(type);
+        //   TextView loginType = (TextView)view.findViewById(R.id.loginType);
+        //  loginType.setText(type);
 
-        if(Objects.equals(type, "Admin"))
-        {
+        if (Objects.equals(type, "Admin")) {
+            /*
             Button addAdmin = view.findViewById(R.id.btnAddAdmin);
             addAdmin.setVisibility(View.VISIBLE);
+
+
 
             addAdmin.setOnClickListener(v -> {
                 Intent intent = new Intent(getActivity(), AddAdminActivity.class);
                 startActivity(intent);
             });
         }
-
+/*
         view.findViewById(R.id.buttonLogout).setOnClickListener(v -> {
             FirebaseAuth.getInstance().signOut();
 
@@ -56,7 +61,12 @@ public class FirstFragment extends Fragment {
             startActivity(intent);
         });
         // Inflate the layout for this fragment
+
+ */
+
+        }
+
+
         return view;
     }
-
 }
