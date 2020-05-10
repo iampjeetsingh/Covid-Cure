@@ -12,7 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.example.hp_awareness_app.MainActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -25,6 +27,8 @@ import java.util.Objects;
 public class FirstFragment extends Fragment {
 
 
+    ImageView info, help;
+
     public FirstFragment() {
         // Required empty public constructor
     }
@@ -35,6 +39,24 @@ public class FirstFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_first, container, false);
 
+        info = view.findViewById(R.id.infoImage);
+        help = view.findViewById(R.id.HelpImage);
+
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), InfoWeb.class);
+                startActivity(intent);
+            }
+        });
+
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),HelpActivity.class);
+                startActivity(intent);
+            }
+        });
         String type = MainActivity.type;
         //   TextView loginType = (TextView)view.findViewById(R.id.loginType);
         //  loginType.setText(type);

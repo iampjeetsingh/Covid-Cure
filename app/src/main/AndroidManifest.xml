@@ -17,12 +17,14 @@
         <activity android:name=".AddAdminActivity" />
         <activity
             android:name=".MainActivity"
-           android:label=""
+            android:label=""
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AddArticle" />
         <activity android:name=".ViewArticle" />
         <activity android:name=".VerifyPhoneActivity" />
-        <activity android:name=".SplashScreen" android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name=".SplashScreen"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,6 +32,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".UpdateCasesActivity" />
+        <activity android:name=".InfoWeb" />
+       <activity android:name=".HelpActivity"/>
     </application>
 
 </manifest>
