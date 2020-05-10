@@ -7,6 +7,13 @@
         android:title="@string/action_settings"
         app:showAsAction="never" />
     <item
+        android:id="@+id/action_add_admin"
+        android:orderInCategory="100"
+        android:onClick="add_new_admin"
+        android:visible="false"
+        android:title="Add New Admin"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/action_logout"
         android:orderInCategory="100"
         android:onClick="logout"

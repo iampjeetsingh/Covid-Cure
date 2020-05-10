@@ -5,7 +5,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
@@ -20,6 +19,8 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -55,6 +56,18 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         getSupportActionBar().show();
 
 
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(@NonNull Menu menu) {
+        MenuItem add_item = menu.findItem(R.id.action_add_admin);
+        if (Objects.equals(type, "Admin")) {
+            add_item.setVisible(true);
+        } else {
+            add_item.setVisible(false);
+        }
+        super.onPrepareOptionsMenu(menu);
+        return true;
     }
 
     @Override
@@ -107,6 +120,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         Intent intent = new Intent(MainActivity.this, PhoneActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
+        startActivity(intent);
+    }
+
+    public void add_new_admin(MenuItem item) {
+        Intent intent = new Intent(MainActivity.this, AddAdminActivity.class);
         startActivity(intent);
     }
 }
