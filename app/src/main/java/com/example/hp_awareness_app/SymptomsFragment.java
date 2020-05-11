@@ -39,6 +39,7 @@ public class SymptomsFragment extends Fragment {
     int currentIndex = 0;
     int currentAnswer = -1;
     int points = 0;
+    boolean ended = false;
 
     @Nullable
     @Override
@@ -65,6 +66,8 @@ public class SymptomsFragment extends Fragment {
         }
         refreshQuestion();
         nextButton.setOnClickListener(v -> {
+            if(ended)
+                return;
             if(currentAnswer==-1){
                 Toast.makeText(getContext(),"Select an option first",Toast.LENGTH_SHORT).show();
                 return;
@@ -74,6 +77,7 @@ public class SymptomsFragment extends Fragment {
                 points += 1;
             }
             currentIndex += 1;
+            currentAnswer = -1;
             refreshQuestion();
         });
     }
@@ -83,21 +87,22 @@ public class SymptomsFragment extends Fragment {
     }
 
     void showResult(){
-
+        ended = true;
         for(int i=0 ; i<5 ; i++){
             getOpt(i).setVisibility(View.GONE);
         }
         if(points==0){
-            Toast.makeText(getContext(),"Risk : Low",Toast.LENGTH_SHORT).show();
+            quesTextView.setText("Risk : Low");
         }else if(points>0 && points <=2){
-            Toast.makeText(getContext(),"Risk : Moderate",Toast.LENGTH_SHORT).show();
+            quesTextView.setText("Risk : Moderate");
         }else if(points>2){
-            Toast.makeText(getContext(),"Risk : High",Toast.LENGTH_SHORT).show();
+            quesTextView.setText("Risk : High");
         }
     }
 
     void refreshQuestion(){
         if(currentIndex>=questions.length) {
+            showResult();
             return;
         }
         for(int i=0 ; i<5 ; i++){
