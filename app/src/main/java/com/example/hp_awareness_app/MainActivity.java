@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     FirstFragment firstFragment = new FirstFragment();
     ArticlesFragment articlesFragment = new ArticlesFragment();
+    SymptomsFragment symptomsFragment = new SymptomsFragment();
     CovidUpdatesFragment covidUpdatesFragment = new CovidUpdatesFragment();
 
     @Override
@@ -106,6 +107,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out).replace(R.id.fragment_container, articlesFragment).commit();
                 return true;
             case R.id.item3:
+                getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out).replace(R.id.fragment_container, symptomsFragment).commit();
+                return true;
+            case R.id.item4:
                 getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out).replace(R.id.fragment_container, covidUpdatesFragment).commit();
                 return true;
             default:
