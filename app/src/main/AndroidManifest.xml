@@ -33,7 +33,10 @@
         </activity>
         <activity android:name=".UpdateCasesActivity" />
         <activity android:name=".InfoWeb" />
-       <activity android:name=".HelpActivity"/>
+        <activity android:name=".HelpActivity" />
+        <activity android:name=".Notifications" />
+        <activity android:name=".SendMessage" />
+        <activity android:name=".GetMessage"/>
     </application>
 
 </manifest>

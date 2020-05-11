@@ -16,13 +16,21 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class AddAdminActivity extends AppCompatActivity {
     private EditText emailTV, passwordTV;
     private Button regBtn;
     private ProgressBar progressBar;
-
+    DatabaseReference reference;
     private FirebaseAuth mAuth;
+
+    String email, password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +51,6 @@ public class AddAdminActivity extends AppCompatActivity {
     private void registerNewUser() {
         progressBar.setVisibility(View.VISIBLE);
 
-        String email, password;
         email = emailTV.getText().toString();
         password = passwordTV.getText().toString();
 
@@ -64,15 +71,19 @@ public class AddAdminActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Registration successful!", Toast.LENGTH_LONG).show();
                             progressBar.setVisibility(View.GONE);
 
+
+
+
                             finish();
-                        }
-                        else {
+                        } else {
                             Toast.makeText(getApplicationContext(), "Registration failed! Please try again later", Toast.LENGTH_LONG).show();
                             progressBar.setVisibility(View.GONE);
                         }
                     }
                 });
     }
+
+
 
     private void initializeUI() {
         emailTV = findViewById(R.id.email);

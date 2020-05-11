@@ -1,6 +1,7 @@
 package com.example.hp_awareness_app;
 
 
+import android.app.Notification;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -28,6 +29,8 @@ public class FirstFragment extends Fragment {
 
 
     ImageView info, help;
+    Button msg;
+    ImageView bell;
 
     public FirstFragment() {
         // Required empty public constructor
@@ -41,6 +44,7 @@ public class FirstFragment extends Fragment {
 
         info = view.findViewById(R.id.infoImage);
         help = view.findViewById(R.id.HelpImage);
+        bell = view.findViewById(R.id.bell);
 
         info.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,14 +54,38 @@ public class FirstFragment extends Fragment {
             }
         });
 
-        help.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),HelpActivity.class);
-                startActivity(intent);
-            }
-        });
+
         String type = MainActivity.type;
+
+        if (Objects.equals(type, "Admin")) {
+            bell.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getActivity(), Notifications.class);
+                    startActivity(intent);
+                }
+            });
+        }
+
+        if (Objects.equals(type, "User")) {
+
+            help.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getActivity(), HelpActivity.class);
+                    startActivity(intent);
+                }
+            });
+
+            bell.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getActivity(), GetMessage.class);
+                    startActivity(intent);
+                }
+            });
+        }
+
         //   TextView loginType = (TextView)view.findViewById(R.id.loginType);
         //  loginType.setText(type);
 

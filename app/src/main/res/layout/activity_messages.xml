@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/UserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="Name"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/UserContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/UserName"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:text="Phone No"
+        android:textSize="17sp" />
+
+
+    <TextView
+        android:id="@+id/UserAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/UserContact"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:text="Address"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/TimeSent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/UserAddress"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:text="11 May, 17:52"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/UserMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/TimeSent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:text="Message Content"
+        android:textSize="17sp" />
+
+    <EditText
+        android:id="@+id/AdminReply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/UserMessage"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="Write here"
+        android:textSize="17sp" />
+
+    <Button
+        android:id="@+id/SendReply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/AdminReply"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/custom_button_blue"
+        android:text="Send"
+        android:textColor="#fff" />
+</RelativeLayout>

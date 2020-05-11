@@ -1,6 +1,7 @@
 package com.example.hp_awareness_app;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -20,6 +21,9 @@ import java.util.Objects;
 public class PhoneActivity extends AppCompatActivity {
     private Spinner spinner;
     private EditText editText;
+
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +53,11 @@ public class PhoneActivity extends AppCompatActivity {
 
             String phoneNumber = "+" + code + number;
 
+            preferences = getSharedPreferences("App", MODE_PRIVATE);
+            editor = preferences.edit();
+            editor.putString("Contact", phoneNumber);
+            editor.commit();
+
             Intent intent = new Intent(PhoneActivity.this, VerifyPhoneActivity.class);
             intent.putExtra("phonenumber", phoneNumber);
             startActivity(intent);
@@ -64,14 +73,12 @@ public class PhoneActivity extends AppCompatActivity {
             List<? extends UserInfo> pd = user.getProviderData();
             UserInfo providerData = pd.get(1);
             String pid = providerData.getProviderId();
-            if(Objects.equals(pid, "password"))
-            {
+            if (Objects.equals(pid, "password")) {
                 Intent intent = new Intent(this, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 intent.putExtra("type", "Admin");
                 startActivity(intent);
-            }
-            else if(Objects.equals(pid, "phone")) {
+            } else if (Objects.equals(pid, "phone")) {
                 Intent intent = new Intent(this, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 intent.putExtra("type", "User");

@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.item1);
 
+
         ActionBar actionBar = getSupportActionBar();
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.color10)));
         getSupportActionBar().setTitle("");
@@ -99,6 +100,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+
         switch (menuItem.getItemId()) {
             case R.id.item1:
                 getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out).replace(R.id.fragment_container, firstFragment).commit();
@@ -115,6 +118,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             default:
                 getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out).replace(R.id.fragment_container, firstFragment).commit();
                 return true;
+
+
         }
 
     }
