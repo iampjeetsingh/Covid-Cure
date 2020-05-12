@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
 
@@ -15,10 +16,19 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.hp_awareness_app.MainActivity;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 
@@ -69,6 +79,7 @@ public class FirstFragment extends Fragment {
 
         if (Objects.equals(type, "User")) {
 
+
             help.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -80,10 +91,23 @@ public class FirstFragment extends Fragment {
             bell.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(getActivity(), GetMessage.class);
+                    DatabaseReference reference;
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    String uiD = user.getUid();
+
+                    reference = FirebaseDatabase.getInstance().getReference().child("User").child(uiD);
+                    Map<String, String> map = new HashMap<>();
+                    map.put("Message", "No new message.");
+                    reference.setValue(map);
+
+                    Intent intent = new Intent(getContext(), GetMessage.class);
                     startActivity(intent);
+
+
                 }
             });
+
+
         }
 
         //   TextView loginType = (TextView)view.findViewById(R.id.loginType);
