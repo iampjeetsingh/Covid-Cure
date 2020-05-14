@@ -69,12 +69,10 @@ public class AdminLoginActivity extends AppCompatActivity {
             return;
         }
 
-        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-
-                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                     String uid = user.getUid();
                     reference = FirebaseDatabase.getInstance().getReference().child("Admin Id").child(uid);
                     HashMap<String, String> userMap = new HashMap<>();
@@ -83,22 +81,47 @@ public class AdminLoginActivity extends AppCompatActivity {
                     reference.setValue(userMap);
                     Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);
-                //    editor.putString("adminUid", uid);
-                 //   editor.commit();
 
+                        Intent intent = new Intent(AdminLoginActivity.this, MainActivity.class);
+                        intent.putExtra("type", "Admin");
+                        startActivity(intent);
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(), "Login failed! Please try again later", Toast.LENGTH_LONG).show();
+                        progressBar.setVisibility(View.GONE);
+                    }
+                });
 
-                    Intent intent = new Intent(AdminLoginActivity.this, MainActivity.class);
-                    intent.putExtra("type", "Admin");
-                    startActivity(intent);
-                } else {
-                    Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                    Toast.makeText(AdminLoginActivity.this, "Authentication failed.",
-                            Toast.LENGTH_SHORT).show();
-                }
-
-
-            }
-        });
+//        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+//            @Override
+//            public void onComplete(@NonNull Task<AuthResult> task) {
+//                if (task.isSuccessful()) {
+//
+//                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//                    String uid = user.getUid();
+//                    reference = FirebaseDatabase.getInstance().getReference().child("Admin Id").child(uid);
+//                    HashMap<String, String> userMap = new HashMap<>();
+//                    userMap.put("email", email);
+//                    userMap.put("id",uid);
+//                    reference.setValue(userMap);
+//                    Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
+//                    progressBar.setVisibility(View.GONE);
+//                //    editor.putString("adminUid", uid);
+//                 //   editor.commit();
+//
+//
+//                    Intent intent = new Intent(AdminLoginActivity.this, MainActivity.class);
+//                    intent.putExtra("type", "Admin");
+//                    startActivity(intent);
+//                } else {
+//                    Log.w(TAG, "createUserWithEmail:failure", task.getException());
+//                    Toast.makeText(AdminLoginActivity.this, "Authentication failed.",
+//                            Toast.LENGTH_SHORT).show();
+//                }
+//
+//
+//            }
+//        });
     }
 
     private void initializeUI() {

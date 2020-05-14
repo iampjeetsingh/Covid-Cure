@@ -19,11 +19,13 @@
         android:id="@+id/question_faq"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/color5"
         android:textSize="20sp"
         />
     <TextView
         android:textSize="20sp"
         android:id="@+id/answer_faq"
+        android:textColor="@color/color9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />

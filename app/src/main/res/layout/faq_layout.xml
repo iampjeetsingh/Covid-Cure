@@ -16,7 +16,9 @@
    <LinearLayout
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       app:layout_constraintTop_toTopOf="parent">
+       app:layout_constraintTop_toTopOf="parent"
+       android:layout_marginBottom="50dp"
+       app:layout_constraintBottom_toTopOf="@id/openChatViewLayout">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -41,7 +43,7 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:gravity="end"
-            android:src="@drawable/circle" />
+            app:srcCompat="@drawable/ic_forum_black_24dp" />
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -75,12 +77,13 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-
+            android:background="@color/colorWhite"
             android:orientation="vertical"
             >
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+
                 android:layout_weight="1">
             </FrameLayout>
             <ImageView
@@ -88,7 +91,7 @@
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_gravity="bottom"
-                android:src="@drawable/circle" />
+                app:srcCompat="@drawable/ic_clear_black_24dp" />
         </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
