@@ -2,6 +2,9 @@ package com.example.hp_awareness_app;
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -24,9 +27,12 @@ import com.google.cloud.dialogflow.v2.SessionsClient;
 import com.google.cloud.dialogflow.v2.SessionsSettings;
 import com.google.cloud.dialogflow.v2.TextInput;
 import java.io.InputStream;
+import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 public class FaqFragment extends Fragment {
@@ -49,9 +55,23 @@ public class FaqFragment extends Fragment {
 
         requireActivity().findViewById(R.id.fragment_container).setVisibility(View.GONE);
         requireActivity().findViewById(R.id.bottomNavigation).setVisibility(View.GONE);
-        View view = inflater.inflate(R.layout.fragment_faq, container, false);
-
+        View view = inflater.inflate(R.layout.faq_layout, container, false);
+        RecyclerView recyclerView = view.findViewById(R.id.faq_recycler_view);
+        recyclerView.setHasFixedSize(true);
         instance = this;
+
+        // use a linear layout manager
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(layoutManager);
+
+        ArrayList<FAQ> faqData = new ArrayList<FAQ>() ;
+        faqData.add(new FAQ("Question","Answer"));
+        faqData.add(new FAQ("Question","Answer"));
+        faqData.add(new FAQ("Question","Answer"));
+        faqData.add(new FAQ("Question","Answer"));
+        // specify an adapter (see also next example)
+        FaqAdapter mAdapter = new FaqAdapter(faqData);
+        recyclerView.setAdapter(mAdapter);
 
         final ScrollView scrollview = view.findViewById(R.id.chatScrollView);
         scrollview.post(() -> scrollview.fullScroll(ScrollView.FOCUS_DOWN));
@@ -79,6 +99,26 @@ public class FaqFragment extends Fragment {
         });
 
         String userName = "USER";
+
+        ImageView btnOpenChatView = view.findViewById(R.id.btnChatView);
+        ImageView btnCloseChatView = view.findViewById(R.id.btnOpenChatView);
+        LinearLayout openChatViwlayout = view.findViewById(R.id.openChatViewLayout);
+        LinearLayout closeChatViwlayout = view.findViewById(R.id.CloseChatViewLayout);
+
+        btnOpenChatView.setOnClickListener(v -> {
+            openChatViwlayout.setVisibility(View.GONE);
+            closeChatViwlayout.setVisibility(View.VISIBLE);
+        });
+
+        openChatViwlayout.setOnClickListener(v -> {
+            openChatViwlayout.setVisibility(View.GONE);
+            closeChatViwlayout.setVisibility(View.VISIBLE);
+        });
+
+        btnCloseChatView.setOnClickListener(v -> {
+            openChatViwlayout.setVisibility(View.VISIBLE);
+            closeChatViwlayout.setVisibility(View.GONE);
+        });
 
         showTextView("Welcome to the FAQ" ,BOT);
         showTextView("Hello " + userName + " !!",BOT);
