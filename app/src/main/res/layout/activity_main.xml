@@ -56,11 +56,11 @@
             android:id="@+id/bottomNavigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:labelVisibilityMode="labeled"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:layout_editor_absoluteX="77dp"
             app:menu="@menu/bottom_navigation_menu"
-            app:itemTextColor="@color/colorWhite"
-            android:background="#6610f2"/>
+            android:background="@color/colorWhite"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

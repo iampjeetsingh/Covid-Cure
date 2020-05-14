@@ -11,7 +11,7 @@
     <item
         android:id="@+id/item3"
         android:icon="@drawable/ic_insert_emoticon_black_24dp"
-        android:title="Check Symptoms"/>
+        android:title="Symptoms"/>
     <item
         android:title="Cases"
         android:icon="@drawable/ic_new_releases_black_24dp"
