@@ -1,6 +1,7 @@
 package com.example.hp_awareness_app;
 
 
+import android.app.Activity;
 import android.app.Notification;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;

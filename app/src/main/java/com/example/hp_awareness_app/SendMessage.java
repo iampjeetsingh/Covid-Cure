@@ -54,6 +54,7 @@ public class SendMessage extends AppCompatActivity {
         userRef = FirebaseDatabase.getInstance().getReference().child("User").child(id);
         Map<String, String> map = new HashMap<>();
         map.put("Message", reply.getText().toString());
+        map.put("Date&Time", time);
         userRef.setValue(map);
         send.setText("Sent");
 

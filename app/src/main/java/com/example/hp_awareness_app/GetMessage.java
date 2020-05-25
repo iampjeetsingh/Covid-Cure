@@ -1,6 +1,8 @@
 package com.example.hp_awareness_app;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,6 +22,11 @@ public class GetMessage extends AppCompatActivity {
 
     DatabaseReference reference;
     TextView reply;
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
+    String dateTime;
+    String getDate;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,13 +35,18 @@ public class GetMessage extends AppCompatActivity {
 
         reply = findViewById(R.id.reply);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        String uiD =user.getUid();
+        String uiD = user.getUid();
+
+        preferences = getSharedPreferences("App", MODE_PRIVATE);
+        dateTime = preferences.getString("Date&Time", "");
 
         reference = FirebaseDatabase.getInstance().getReference().child("User").child(uiD);
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String msg = dataSnapshot.child("Message").getValue().toString();
+                getDate = dataSnapshot.child("Date&Time").getValue().toString();
+
                 reply.setText(msg);
             }
 
@@ -43,6 +55,12 @@ public class GetMessage extends AppCompatActivity {
 
             }
         });
+
+
+        if (dateTime == getDate) {
+            HelpActivity.sendButton.setText("Send Message");
+            HelpActivity.sendButton.setClickable(true);
+        }
 
     }
 }

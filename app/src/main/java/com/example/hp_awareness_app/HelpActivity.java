@@ -14,6 +14,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 
 public class HelpActivity extends AppCompatActivity {
@@ -21,7 +23,7 @@ public class HelpActivity extends AppCompatActivity {
     DatabaseReference userDatabase;
     EditText name, contact, address, message;
     String dateTime;
-    Button sendButton;
+  static Button sendButton;
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
     String no;
@@ -49,6 +51,10 @@ public class HelpActivity extends AppCompatActivity {
         no = preferences.getString("Contact", "");
         contact.setText(no);
 
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd 'at' HH:mm:ss ");
+        dateTime = sdf.format(new Date());
+
+
     }
 
     private void SendData() {
@@ -61,11 +67,15 @@ public class HelpActivity extends AppCompatActivity {
         userMap.put("Name", name.getText().toString());
         userMap.put("Contact", no);
         userMap.put("Address", address.getText().toString());
-        userMap.put("DateTime", "dateTime");
+        userMap.put("DateTime", dateTime);
         userMap.put("Message", message.getText().toString());
         userMap.put("Id", uID);
         userDatabase.child(uID).setValue(userMap);
         sendButton.setText("Message Sent");
+        sendButton.setEnabled(false);
+        editor = preferences.edit();
+        editor.putString("Date&Time", dateTime);
+        editor.commit();
 /*
         adminRef = FirebaseDatabase.getInstance().getReference().child("User").child("JioUKTzeV5WPsdcU3ckmf8QvghJ3");
         HashMap<String, String> map = new HashMap<>();

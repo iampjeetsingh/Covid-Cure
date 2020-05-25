@@ -10,22 +10,37 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.Toolbar;
 
+import com.android.volley.toolbox.StringRequest;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.gson.Gson;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
-public class CovidUpdatesFragment extends Fragment {
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
+public class CovidUpdatesFragment extends Fragment {
     private RecyclerView recyclerView;
     private FirebaseRecyclerAdapter<Updates, UpdatesViewHolder> firebaseRecyclerAdapter;
     private DatabaseReference ref;
@@ -99,7 +114,7 @@ public class CovidUpdatesFragment extends Fragment {
     public void onStart() {
         super.onStart();
         String type = MainActivity.type;
-        firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Updates, UpdatesViewHolder>(Updates.class,R.layout.updates_row,UpdatesViewHolder.class,ref) {
+        firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Updates, UpdatesViewHolder>(Updates.class, R.layout.updates_row, UpdatesViewHolder.class, ref) {
             @Override
             protected void populateViewHolder(UpdatesViewHolder updatesViewHolder, Updates updates, int i) {
                 updatesViewHolder.setData(updates, v -> {
@@ -115,7 +130,7 @@ public class CovidUpdatesFragment extends Fragment {
     }
 
     public static class UpdatesViewHolder extends RecyclerView.ViewHolder {
-        private TextView locationtxt,confirmedtxt,recoveredtxt,deceasedtxt,activetxt,confirmeddeltatxt,recovereddeltatxt,deceaseddeltatxt,activedeltatxt;
+        private TextView locationtxt, confirmedtxt, recoveredtxt, deceasedtxt, activetxt, confirmeddeltatxt, recovereddeltatxt, deceaseddeltatxt, activedeltatxt;
 
         public UpdatesViewHolder(@NonNull View itemView) {
             super(itemView);
