@@ -4,91 +4,80 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PhoneActivity">
+    tools:context=".MainActivity"
+    android:background="#86DFFF">
 
-        <RelativeLayout
-        android:id="@+id/relativeLayout"
+
+
+    <RelativeLayout
+        android:id="@+id/frst_ll"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@color/colorPrimary">
+        android:layout_height="300dp"
+        android:layout_below="@+id/toolbar_id"
+        android:gravity="center"
+        >
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:background="@drawable/signin"
+            android:scaleType="fitXY"/>
+    </RelativeLayout>
 
-<!--        add Logo Here-->
-
-
-        </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/frst_ll"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:paddingTop="25dp"
+        android:paddingRight="15dp">
 
 
         <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_below="@id/relativeLayout"
-        android:layout_marginTop="-50dp"
-        android:background="@drawable/waves" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/imageView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="Please enter phone number"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-        android:textColor="@color/colorPrimary" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView"
-        android:orientation="horizontal"
-        android:padding="15dp">
-
-        <Spinner
-            android:id="@+id/spinnerCountries"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content" />
+            android:id="@+id/nxt_btn_id"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_above="@+id/admin_login"
+            android:layout_marginLeft="-235dp"
+            android:layout_marginBottom="123dp"
+            android:layout_toRightOf="@id/phnNo"
+            app:srcCompat="@drawable/bg_otp_nxt_btn" />
 
         <EditText
-            android:id="@+id/editTextPhone"
-            android:layout_width="0dp"
+            android:id="@+id/phnNo"
+            android:layout_width="393dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:digits="0123456789"
-            android:hint="enter your number"
-            android:maxLength="10" />
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/admin_button"
+            android:hint="Your Phone Number"
+            android:inputType="number"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textSize="25sp" />
 
-    </LinearLayout>
+        <Button
+            android:id="@+id/admin_login"
+            android:layout_width="wrap_content"
+            android:padding="5dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="132dp"
+            android:layout_marginLeft="132dp"
+            android:layout_marginEnd="116dp"
+            android:layout_marginRight="116dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/admin_button"
+            android:text="LOGIN AS ADMIN"
+            android:textColor="#000000" />
 
-    <LinearLayout
-        android:id="@+id/linearLayoutButtonLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/linearLayout"
-        android:orientation="horizontal"
-        android:padding="15dp">
 
-    <Button
-        android:id="@+id/buttonContinue"
-        android:layout_width="150dp"
-        android:layout_marginStart="20dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:background="@color/colorPrimary"
-        android:text="Login"
-        android:textAllCaps="false"
-        android:textColor="#ffffff" />
+    </RelativeLayout>
 
-    <Button
-        android:id="@+id/btnAdminLogin"
-        android:layout_width="150dp"
-        android:layout_marginStart="20dp"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:text="Admin Login"
-        android:layout_gravity="end"
-        android:textAllCaps="false"
-        android:textColor="#ffffff" />
-    </LinearLayout>
 </RelativeLayout>
