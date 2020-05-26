@@ -19,7 +19,7 @@
 
         <ImageView
             android:layout_width="wrap_content"
-
+android:id="@+id/phnImage"
             android:layout_height="wrap_content"
             android:background="@drawable/phone_png" />
     </LinearLayout>
@@ -71,7 +71,8 @@
             android:layout_marginEnd="77dp"
             android:layout_marginRight="77dp"
             android:layout_marginBottom="70dp"
-            android:text="LOGIN AS ADMIN" />
+            android:text="LOGIN AS ADMIN"
+            />
 
     </RelativeLayout>
 
