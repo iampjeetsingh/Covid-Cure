@@ -201,12 +201,12 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                 int two = (codeint % 100000)/10000;
                 int one = (codeint)/100000;
 
-                et1.setText(one);
-                et2.setText(two);
-                et3.setText(three);
-                et4.setText(four);
-                et5.setText(five);
-                et6.setText(six);
+                et1.setText(String.valueOf(one));
+                et2.setText(String.valueOf(two));
+                et3.setText(String.valueOf(three));
+                et4.setText(String.valueOf(four));
+                et5.setText(String.valueOf(five));
+                et6.setText(String.valueOf(six));
 
                 verifyCode(code);
             }else{
