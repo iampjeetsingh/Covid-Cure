@@ -38,7 +38,7 @@ public class PhoneActivity extends AppCompatActivity {
         }
 
       //  spinner = findViewById(R.id.spinnerCountries);
-       spinner.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, CountryData.countryNames));
+     //  spinner.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, CountryData.countryNames));
 
         editText = findViewById(R.id.editTextPhone);
 
@@ -58,7 +58,7 @@ public class PhoneActivity extends AppCompatActivity {
                 return;
             }
 
-            String phoneNumber = "+" + code + number;
+            String phoneNumber = "+" + 91 + number;
 
             preferences = getSharedPreferences("App", MODE_PRIVATE);
             editor = preferences.edit();
