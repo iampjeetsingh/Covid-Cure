@@ -2,6 +2,9 @@ package com.example.hp_awareness_app;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -25,29 +28,92 @@ public class VerifyPhoneActivity extends AppCompatActivity {
     private String verificationId;
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
-    private EditText editText;
+
+    private EditText et1;
+    private EditText et2;
+    private EditText et3;
+    private EditText et4;
+    private EditText et5;
+    private EditText et6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_verify_phone);
+        setContentView(R.layout.activity_verification);
 
         mAuth = FirebaseAuth.getInstance();
 
         progressBar = findViewById(R.id.progressbar);
-        editText = findViewById(R.id.editTextCode);
+
+        et1 = findViewById(R.id.et_1);
+        et2 = findViewById(R.id.et_2);
+        et3 = findViewById(R.id.et_3);
+        et4 = findViewById(R.id.et_4);
+        et5 = findViewById(R.id.et_5);
+        et6 = findViewById(R.id.et_6);
+
+
+        et1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if(!s.toString().equals("")) {
+                    et2.requestFocus();
+                }
+
+            }
+        });
+
+        changeTextViewFocus(et1,et2,et3);
+        changeTextViewFocus(et2,et3,et4);
+        changeTextViewFocus(et3,et4,et5);
+        changeTextViewFocus(et4,et5,et6);
+
+        et6.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if(s.toString().equals("")) {
+                    et5.requestFocus();
+                }
+
+            }
+        });
 
         String phonenumber = getIntent().getStringExtra("phonenumber");
         sendVerificationCode(phonenumber);
 
         findViewById(R.id.buttonSignIn).setOnClickListener(v -> {
 
-            String code = editText.getText().toString().trim();
+            String code = et1.getText().toString().trim()
+                    + et2.getText().toString().trim()
+                    + et3.getText().toString().trim()
+                    + et4.getText().toString().trim()
+                    + et5.getText().toString().trim()
+                    + et6.getText().toString().trim();
 
             if (code.isEmpty() || code.length() < 6) {
 
-                editText.setError("Enter code...");
-                editText.requestFocus();
+                et1.setError("Enter code...");
+                et1.requestFocus();
                 return;
             }
             verifyCode(code);
@@ -55,6 +121,33 @@ public class VerifyPhoneActivity extends AppCompatActivity {
 
     }
 
+    private void changeTextViewFocus(EditText et1,EditText et2,EditText et3)
+    {
+        et2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                if(!s.toString().equals("")) {
+                    et3.requestFocus();
+                }
+                else
+                {
+                    et1.requestFocus();
+                }
+
+            }
+        });
+    }
     private void verifyCode(String code) {
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
         signInWithCredential(credential);
@@ -91,7 +184,22 @@ public class VerifyPhoneActivity extends AppCompatActivity {
         public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
             String code = phoneAuthCredential.getSmsCode();
             if (code != null) {
-                editText.setText(code);
+                int codeint = Integer.parseInt(code);
+
+                int six = codeint % 10;
+                int five = (codeint % 100)/10;
+                int four = (codeint % 1000)/100;
+                int three = (codeint % 10000)/1000;
+                int two = (codeint % 100000)/10000;
+                int one = (codeint)/100000;
+
+                et1.setText(one);
+                et2.setText(two);
+                et3.setText(three);
+                et4.setText(four);
+                et5.setText(five);
+                et6.setText(six);
+
                 verifyCode(code);
             }else{
                 signInWithCredential(phoneAuthCredential);

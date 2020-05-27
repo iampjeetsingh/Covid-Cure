@@ -5,12 +5,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
   >
+<androidx.cardview.widget.CardView
+    android:id="@+id/card_verify"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/verifyotp"
+
+    android:layout_gravity="center">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#86DFFF"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+    <ImageView
+        android:id="@+id/phone_verify_image"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_gravity="center"
+
+        android:background="@drawable/otp"
+        android:scaleType="fitXY" />
+</LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar_id"
-        android:background="@color/clr_otp_bg">
+        android:layout_below="@+id/phone_verify_image"
+
+        >
 
         <LinearLayout
             android:id="@+id/frst_ll"
@@ -24,7 +52,6 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Verification Code"
-                android:textColor="@color/clr_white_text"
                 android:textSize="25dp" />
 
             <TextView
@@ -45,6 +72,7 @@
             android:layout_centerInParent="true"
             android:layout_marginTop="60dp"
             android:gravity="center"
+            android:id="@+id/second_ll"
             android:orientation="horizontal">
 
             <EditText
@@ -55,9 +83,9 @@
                 android:background="@color/clr_grey_text_transparent"
                 android:gravity="center"
                 android:maxLength="1"
-                android:textColor="@color/clr_white_text"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:inputType="phone"/>
 
             <EditText
                 android:id="@+id/et_2"
@@ -67,9 +95,9 @@
                 android:background="@color/clr_grey_text_transparent"
                 android:gravity="center"
                 android:maxLength="1"
-                android:textColor="@color/clr_white_text"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:inputType="phone"/>
 
             <EditText
                 android:id="@+id/et_3"
@@ -79,9 +107,9 @@
                 android:background="@color/clr_grey_text_transparent"
                 android:gravity="center"
                 android:maxLength="1"
-                android:textColor="@color/clr_white_text"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:inputType="phone"/>
 
             <EditText
                 android:id="@+id/et_4"
@@ -91,9 +119,9 @@
                 android:background="@color/clr_grey_text_transparent"
                 android:gravity="center"
                 android:maxLength="1"
-                android:textColor="@color/clr_white_text"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:inputType="phone"/>
             <EditText
                 android:id="@+id/et_5"
                 android:layout_width="50dp"
@@ -102,9 +130,9 @@
                 android:background="@color/clr_grey_text_transparent"
                 android:gravity="center"
                 android:maxLength="1"
-                android:textColor="@color/clr_white_text"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:inputType="phone"/>
             <EditText
                 android:id="@+id/et_6"
                 android:layout_width="50dp"
@@ -113,11 +141,33 @@
                 android:background="@color/clr_grey_text_transparent"
                 android:gravity="center"
                 android:maxLength="1"
-                android:textColor="@color/clr_white_text"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:inputType="phone"/>
 
         </LinearLayout>
+        <Button
+            android:id="@+id/buttonSignIn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/second_ll"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:textColor="#86c1ff"
+            android:text="Sign In"
+            android:textAllCaps="false"
+            android:background="@drawable/admin_button" />
 
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonSignIn"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone" />
     </RelativeLayout>
+</LinearLayout>
+</androidx.cardview.widget.CardView>
+
+
 </RelativeLayout>
