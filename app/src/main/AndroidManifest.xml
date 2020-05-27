@@ -47,7 +47,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AddArticle" />
         <activity android:name=".ViewArticle" />
-        <activity android:name=".VerifyPhoneActivity" />
+        <activity android:name=".VerifyPhoneActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".SplashScreen"
             android:theme="@style/AppTheme.NoActionBar">
