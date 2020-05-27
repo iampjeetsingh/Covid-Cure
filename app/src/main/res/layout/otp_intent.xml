@@ -45,7 +45,7 @@ android:id="@+id/phnImage"
             android:paddingLeft="10dp" />
 
         <Button
-            android:id="@+id/nxt_btn_id"
+            android:id="@+id/buttonContinue"
             android:layout_width="47dp"
             android:layout_height="50dp"
             android:layout_alignParentStart="true"
@@ -58,7 +58,7 @@ android:id="@+id/phnImage"
             android:background="@drawable/bg_otp_nxt_btn" />
 
         <Button
-            android:id="@+id/admin_login"
+            android:id="@+id/btnAdminLogin"
             android:layout_width="227dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
