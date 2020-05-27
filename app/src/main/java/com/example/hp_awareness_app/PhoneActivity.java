@@ -48,7 +48,6 @@ public class PhoneActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.buttonContinue).setOnClickListener(v -> {
-            String code = CountryData.countryAreaCodes[spinner.getSelectedItemPosition()];
 
             String number = editText.getText().toString().trim();
 
