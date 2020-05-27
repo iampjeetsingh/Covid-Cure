@@ -30,12 +30,26 @@
         app:layout_constraintStart_toStartOf="parent">
 
 
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation"
+            android:layout_width="203dp"
+            android:layout_height="209dp"
+            android:layout_marginBottom="96dp"
+            app:layout_constraintBottom_toTopOf="@+id/buttonContinue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="data.json"
+            app:lottie_loop="true" />
+
         <EditText
             android:id="@+id/editTextPhone"
             android:layout_width="251dp"
             android:layout_height="48dp"
-            android:layout_marginStart="108dp"
-            android:layout_marginTop="108dp"
+            android:layout_marginStart="112dp"
+            android:layout_marginTop="188dp"
             android:background="@drawable/custom_button"
             android:hint="Your Phone Number"
             android:inputType="number"
@@ -45,13 +59,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
         <Button
             android:id="@+id/buttonContinue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/admin_button"
             android:text="LOGIN"
             android:textColor="#86c1ff"
@@ -65,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:layout_marginBottom="100dp"
+            android:layout_marginBottom="56dp"
             android:background="@drawable/admin_button"
             android:text="LOGIN AS ADMIN"
             android:textColor="#86c1ff"
@@ -73,13 +88,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="56dp"
             android:layout_height="52dp"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="108dp"
+            android:layout_marginTop="188dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/phoneicon" />
