@@ -10,6 +10,7 @@ import android.location.Geocoder;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -63,6 +64,7 @@ public class GeofenceFragment extends Fragment {
 
     List<Address> addressList;
     String fulladdress;
+    Boolean status = false;
 
     @Nullable
     @Override
@@ -83,6 +85,7 @@ public class GeofenceFragment extends Fragment {
             public void onClick(View v) {
                 isolationbtn.setChecked(false);
                 quartype = "Home Quarantine";
+                status = true;
 
             }
         });
@@ -92,15 +95,22 @@ public class GeofenceFragment extends Fragment {
             public void onClick(View v) {
                 homebtn.setChecked(false);
                 quartype = "Isolation Center";
+                status = true;
             }
         });
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), GeofenceActivity.class);
-                startActivity(intent);
-                SendDetails();
+
+                if (TextUtils.isEmpty(name.getText().toString()) || TextUtils.isEmpty(age.getText().toString()) || status.equals(false)) {
+                    Toast.makeText(getContext(), "Please fill all details", Toast.LENGTH_SHORT).show();
+                }else {
+                    Intent intent = new Intent(getContext(), GeofenceActivity.class);
+                    startActivity(intent);
+                    SendDetails();
+                }
+
             }
         });
 

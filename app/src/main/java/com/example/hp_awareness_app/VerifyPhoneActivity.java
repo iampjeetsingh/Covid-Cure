@@ -41,7 +41,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_verification);
+        setContentView(R.layout.activity_otp_verfication);
         //changing statusbar color
         if (android.os.Build.VERSION.SDK_INT >= 21) {
             Window window = this.getWindow();
@@ -74,17 +74,17 @@ public class VerifyPhoneActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if(!s.toString().equals("")) {
+                if (!s.toString().equals("")) {
                     et2.requestFocus();
                 }
 
             }
         });
 
-        changeTextViewFocus(et1,et2,et3);
-        changeTextViewFocus(et2,et3,et4);
-        changeTextViewFocus(et3,et4,et5);
-        changeTextViewFocus(et4,et5,et6);
+        changeTextViewFocus(et1, et2, et3);
+        changeTextViewFocus(et2, et3, et4);
+        changeTextViewFocus(et3, et4, et5);
+        changeTextViewFocus(et4, et5, et6);
 
         et6.addTextChangedListener(new TextWatcher() {
             @Override
@@ -99,7 +99,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if(s.toString().equals("")) {
+                if (s.toString().equals("")) {
                     et5.requestFocus();
                 }
 
@@ -129,8 +129,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
 
     }
 
-    private void changeTextViewFocus(EditText et1,EditText et2,EditText et3)
-    {
+    private void changeTextViewFocus(EditText et1, EditText et2, EditText et3) {
         et2.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -145,17 +144,16 @@ public class VerifyPhoneActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
 
-                if(!s.toString().equals("")) {
+                if (!s.toString().equals("")) {
                     et3.requestFocus();
-                }
-                else
-                {
+                } else {
                     et1.requestFocus();
                 }
 
             }
         });
     }
+
     private void verifyCode(String code) {
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
         signInWithCredential(credential);
@@ -195,11 +193,11 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                 int codeint = Integer.parseInt(code);
 
                 int six = codeint % 10;
-                int five = (codeint % 100)/10;
-                int four = (codeint % 1000)/100;
-                int three = (codeint % 10000)/1000;
-                int two = (codeint % 100000)/10000;
-                int one = (codeint)/100000;
+                int five = (codeint % 100) / 10;
+                int four = (codeint % 1000) / 100;
+                int three = (codeint % 10000) / 1000;
+                int two = (codeint % 100000) / 10000;
+                int one = (codeint) / 100000;
 
                 et1.setText(String.valueOf(one));
                 et2.setText(String.valueOf(two));
@@ -209,27 +207,27 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                 et6.setText(String.valueOf(six));
 
                 verifyCode(code);
-            }else{
+            } else {
                 signInWithCredential(phoneAuthCredential);
             }
         }
 
         @Override
         public void onVerificationFailed(@NonNull FirebaseException e) {
-            Toast.makeText(VerifyPhoneActivity.this, "Error : "+e.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(VerifyPhoneActivity.this, "Error : " + e.getMessage(), Toast.LENGTH_LONG).show();
         }
 
         @Override
         public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
             super.onCodeSent(s, forceResendingToken);
             verificationId = s;
-            Toast.makeText(VerifyPhoneActivity.this,"Verification Code Sent",Toast.LENGTH_SHORT).show();
+            Toast.makeText(VerifyPhoneActivity.this, "Verification Code Sent", Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onCodeAutoRetrievalTimeOut(@NonNull String s) {
             super.onCodeAutoRetrievalTimeOut(s);
-            Toast.makeText(VerifyPhoneActivity.this,"Auto Retrieval Timeout, Enter code manually",Toast.LENGTH_SHORT).show();
+            Toast.makeText(VerifyPhoneActivity.this, "Auto Retrieval Timeout, Enter code manually", Toast.LENGTH_SHORT).show();
         }
     };
 }
