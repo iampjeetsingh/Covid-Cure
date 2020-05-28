@@ -31,20 +31,38 @@
         app:layout_constraintStart_toStartOf="parent">
 
 
-        <EditText
-            android:id="@+id/editTextPhone"
-            android:layout_width="251dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="112dp"
-            android:layout_marginTop="188dp"
-            android:background="@drawable/custom_button"
-            android:hint="Your Phone Number"
-            android:inputType="number"
-            android:padding="10dp"
-            android:textColor="#000000"
-            android:textSize="17sp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toTopOf="@+id/buttonContinue">
+
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="56dp"
+                android:layout_height="52dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/phoneicon" />
+
+            <EditText
+                android:id="@+id/editTextPhone"
+                android:layout_width="251dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="10dp"
+
+                android:background="@drawable/custom_button"
+                android:hint="Your Phone Number"
+                android:inputType="phone"
+                android:padding="10dp"
+                android:textSize="17sp"
+                />
+
+        </LinearLayout>
 
 
         <Button
@@ -75,15 +93,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="56dp"
-            android:layout_height="52dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="188dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/phoneicon" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
