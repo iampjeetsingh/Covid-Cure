@@ -176,7 +176,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                                 startActivity(intent);
 
                             }
-                        },3000);
+                        },3300);
 
 
                     } else {

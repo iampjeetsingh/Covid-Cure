@@ -10,14 +10,15 @@
 
     <ImageView
         android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_height="277dp"
         android:background="@drawable/signin"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.061" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/relativeLayout2"
@@ -29,20 +30,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/animation"
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:layout_marginBottom="96dp"
-            app:layout_constraintBottom_toTopOf="@+id/buttonContinue"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:lottie_autoPlay="true"
-            app:lottie_fileName="data.json"
-            app:lottie_loop="true" />
 
         <EditText
             android:id="@+id/editTextPhone"
