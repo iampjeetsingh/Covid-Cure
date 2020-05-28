@@ -21,6 +21,6 @@ public class SplashScreen extends AppCompatActivity {
             Intent intent = new Intent(SplashScreen.this,PhoneActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
-        },6500);
+        },4500);
     }
 }
