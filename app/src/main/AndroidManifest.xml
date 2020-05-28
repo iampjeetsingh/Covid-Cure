@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.hp_awareness_app">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -23,7 +22,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-
+        <activity android:name=".ProfileActivity"></activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -32,12 +31,11 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
-
-
         <activity
             android:name=".NewActivity"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
-        <activity android:name=".PhoneActivity"
+        <activity
+            android:name=".PhoneActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AdminLoginActivity" />
         <activity android:name=".AddAdminActivity" />
@@ -47,8 +45,9 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AddArticle" />
         <activity android:name=".ViewArticle" />
-        <activity android:name=".VerifyPhoneActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".VerifyPhoneActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SplashScreen"
             android:theme="@style/AppTheme.NoActionBar">
@@ -70,6 +69,7 @@
             android:enabled="true"
             android:exported="true"
             android:foregroundServiceType="location" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCB3lT9OLRUJgkb5flgGmgrW0lhjxOyCIA" />
@@ -80,10 +80,7 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-
-        <activity android:name=".GeofenceActivity">
-
-        </activity>
+        <activity android:name=".GeofenceActivity"></activity>
     </application>
 
 </manifest>
