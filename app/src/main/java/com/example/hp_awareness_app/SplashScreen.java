@@ -26,8 +26,8 @@ public class SplashScreen extends AppCompatActivity {
         }
         final ImageView main = (ImageView) findViewById(R.id.final_img);
         final FrameLayout frameLayout = (FrameLayout) findViewById(R.id.frame);
-        main.animate().alpha(1).setDuration(3500);
-        new CountDownTimer(3500, 1000) { // 5000 = 5 sec
+        main.animate().alpha(1).setDuration(2500);
+        new CountDownTimer(2500, 1000) { // 5000 = 5 sec
 
             public void onTick(long millisUntilFinished) {
             }
