@@ -11,6 +11,9 @@
     <ImageView
         android:layout_width="250dp"
         android:layout_height="277dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="150dp"
         android:background="@drawable/signin"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,45 +25,47 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/relativeLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="458dp"
+        android:layout_width="438dp"
+        android:layout_height="447dp"
         android:background="#b9ecff"
         android:gravity="center"
         android:paddingTop="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
+            android:layout_marginTop="80dp"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/buttonContinue">
+            app:layout_constraintTop_toTopOf="parent">
 
 
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="56dp"
                 android:layout_height="52dp"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="40dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/phoneicon" />
 
             <EditText
                 android:id="@+id/editTextPhone"
-                android:layout_width="251dp"
+                android:layout_width="286dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="10dp"
 
+                android:layout_marginEnd="40dp"
+                android:layout_marginRight="40dp"
                 android:background="@drawable/custom_button"
                 android:hint="Your Phone Number"
                 android:inputType="phone"
                 android:padding="10dp"
-                android:textSize="17sp"
-                />
+                android:textSize="17sp" />
 
         </LinearLayout>
 
@@ -71,10 +76,12 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="30dp"
             android:background="@drawable/admin_button"
+            android:fontFamily="@font/amiko_bold"
             android:text="LOGIN"
             android:textColor="#86c1ff"
+            android:textSize="21sp"
             app:layout_constraintBottom_toTopOf="@+id/btnAdminLogin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -85,14 +92,14 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:layout_marginBottom="56dp"
+            android:layout_marginBottom="80dp"
             android:background="@drawable/admin_button"
             android:text="LOGIN AS ADMIN"
             android:textColor="#86c1ff"
+            android:textSize="21sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

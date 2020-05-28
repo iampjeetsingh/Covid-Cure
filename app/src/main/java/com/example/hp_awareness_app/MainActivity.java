@@ -72,38 +72,30 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         LocationSettingsRequest.Builder builder;
         builder=new  LocationSettingsRequest.Builder().addLocationRequest(request);
         Task<LocationSettingsResponse> result = LocationServices.getSettingsClient(this).checkLocationSettings(builder.build());
-        result.addOnCompleteListener(new OnCompleteListener<LocationSettingsResponse>() {
-            @Override
-            public void onComplete(@NonNull Task<LocationSettingsResponse> task) {
+        result.addOnCompleteListener(task -> {
+            try {
+                task.getResult(ApiException.class);
+            } catch (ApiException e) {
+                switch (e.getStatusCode())
+                {
+                    case LocationSettingsStatusCodes
+                            .RESOLUTION_REQUIRED:
+                        ResolvableApiException Rexception=(ResolvableApiException) e;
+                        try {
+                            Rexception.startResolutionForResult(MainActivity.this,8989);
+                        } catch (IntentSender.SendIntentException ex) {
+                            ex.printStackTrace();
+                        }catch (ClassCastException ex)
+                        {
 
-                try {
-                    task.getResult(ApiException.class);
-                } catch (ApiException e) {
-                    switch (e.getStatusCode())
-                    {
-                        case LocationSettingsStatusCodes
-                                .RESOLUTION_REQUIRED:
-                            ResolvableApiException Rexception=(ResolvableApiException) e;
-                            try {
-                                Rexception.startResolutionForResult(MainActivity.this,8989);
-                            } catch (IntentSender.SendIntentException ex) {
-                                ex.printStackTrace();
-                            }catch (ClassCastException ex)
-                            {
+                        }
+                        break;
+                    case LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE:
+                        break;
 
-                            }
-                            break;
-                        case LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE:
-                            break;
-
-                    }
                 }
-
             }
         });
-
-
-
     }
 
     @Override
@@ -144,6 +136,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_add) {
             return false;
+        }
+        if(item.getItemId() == R.id.action_profile){
+            Intent intent = new Intent(MainActivity.this,ProfileActivity.class);
+            startActivity(intent);
+            return true;
         }
         return false;
     }
