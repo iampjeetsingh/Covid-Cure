@@ -33,7 +33,7 @@
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
         <activity
-            android:name=".NewActivity"
+            android:name=".PhoneActivity"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,7 +43,7 @@
 
         </activity>
         <activity
-            android:name=".PhoneActivity"
+            android:name=".RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AdminLoginActivity" />
         <activity android:name=".AddAdminActivity" />
@@ -67,7 +67,7 @@
         <activity android:name=".Notifications" />
         <activity android:name=".SendMessage" />
         <activity android:name=".GetMessage" />
-        <activity android:name=".RegisterActivity"
+        <activity android:name=".NewActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
 
         </activity>
