@@ -9,24 +9,24 @@
 
 
     <ImageView
-        android:layout_width="250dp"
-        android:layout_height="277dp"
+        android:layout_width="225dp"
+        android:layout_height="235dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="150dp"
         android:background="@drawable/signin"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/relativeLayout2"
-        android:layout_width="438dp"
-        android:layout_height="447dp"
+        android:layout_width="416dp"
+        android:layout_height="451dp"
         android:background="#b9ecff"
         android:gravity="center"
         android:paddingTop="25dp"
@@ -55,7 +55,7 @@
 
             <EditText
                 android:id="@+id/editTextPhone"
-                android:layout_width="286dp"
+                android:layout_width="266dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="10dp"
 
