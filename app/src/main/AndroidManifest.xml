@@ -36,13 +36,22 @@
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
         <activity
             android:name=".PhoneActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+
+            android:theme="@style/AppTheme.NoActionBar" >
+
+        </activity>
         <activity android:name=".AdminLoginActivity" />
         <activity android:name=".AddAdminActivity" />
         <activity
             android:name=".MainActivity"
             android:label=""
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".AddArticle" />
         <activity android:name=".ViewArticle" />
         <activity
@@ -61,11 +70,7 @@
         <activity android:name=".GetMessage" />
         <activity android:name=".RegisterActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <service
