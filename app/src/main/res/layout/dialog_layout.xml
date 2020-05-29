@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/close"
+
         android:text="X"
         android:textColor="#EEEEEE"
         android:textSize="24dp"
