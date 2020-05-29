@@ -311,17 +311,16 @@
             app:srcCompat="@drawable/ic_sex" />
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardSave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:layout_marginBottom="10dp"
-            android:id="@+id/cardSave"
+            android:background="@drawable/edittext_corners"
+           app:cardBackgroundColor="@color/clr_grey_text_transparent"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6"
-            android:background="@drawable/edittext_corners"
-            android:backgroundTint="@color/clr_grey_text_transparent"
-            >
+            app:layout_constraintTop_toBottomOf="@+id/textView6">
 
             <RelativeLayout
                 android:layout_width="wrap_content"

@@ -34,7 +34,7 @@
         -->
         <activity
             android:name=".NewActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -53,12 +53,9 @@
         <activity
             android:name=".MainActivity"
             android:label=""
-            android:theme="@style/AppTheme.NoActionBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:theme="@style/Widget.AppCompat.Light.ActionBar" >
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity android:name=".AddArticle" />
         <activity android:name=".ViewArticle" />

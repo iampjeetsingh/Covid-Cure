@@ -33,12 +33,12 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 travelNo.setChecked(false);
-                OpenDialog();
+               // OpenDialog();
 
             }
         });
     }
-
+/*
     private void OpenDialog() {
         final AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
         View view = getLayoutInflater().inflate(R.layout.dialog_layout, null);
@@ -105,5 +105,7 @@ public class RegisterActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
+
+ */
 
 }
