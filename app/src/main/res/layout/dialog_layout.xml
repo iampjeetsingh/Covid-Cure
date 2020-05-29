@@ -1,124 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="300dp"
-    android:layout_height="350dp"
-    android:background="#64b5f6">
+    android:layout_height="400dp"
+    android:layout_margin="32dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="0dp"
+    app:cardPreventCornerOverlap="true"
+    android:background="@drawable/travel_dialog">
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="8dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        android:background="@drawable/travel_dialog">
 
-        android:text="X"
-        android:textColor="#EEEEEE"
-        android:textSize="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/recentPlace"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:background="@drawable/edittext"
-        android:ems="10"
-        android:hint="Recent place travelled"
-        android:inputType="textPersonName"
-        android:padding="5dp"
-        android:textColorHint="#eee"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        <EditText
+            android:id="@+id/recentPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edittext_corners"
+            android:backgroundTint="@color/clr_grey_text_transparent"
+            android:ems="10"
+            android:fontFamily="@font/ps"
+            android:hint="Recent place travelled"
+            android:inputType="textPersonName"
+            android:padding="5dp"
+            android:paddingLeft="20dp"
+            android:textColorHint="#8fb1b9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="12dp"
-        android:text="Are you quarantined?"
-        android:textColor="#eee"
-        android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="@+id/recentPlace"
-        app:layout_constraintTop_toBottomOf="@+id/recentPlace" />
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edittext"
+            android:fontFamily="@font/ps"
+            android:text="Are you quarantined?"
 
-    <RadioButton
-        android:id="@+id/radioQuarYes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:buttonTint="#002984"
-        android:text="Yes"
-        android:textColor="#eee"
-        android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
-    <RadioButton
-        android:id="@+id/radioQuarNo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="10dp"
-        android:buttonTint="#002984"
-        android:text="No"
-        android:textColor="#eee"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="@+id/recentPlace"
+            app:layout_constraintTop_toBottomOf="@+id/recentPlace" />
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Quarantine Type :"
-        android:textColor="#eee"
-        android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="@+id/radioQuarYes"
-        app:layout_constraintTop_toBottomOf="@+id/radioQuarYes" />
+        <RadioButton
+            android:id="@+id/radioQuarYes"
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/ps"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edittext_corners"
+            android:backgroundTint="@color/clr_grey_text_transparent"
+            android:paddingRight="15dp"
+            android:text="Yes"
+            android:textColor="#8fb1b9"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="@+id/textView8"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
-    <RadioButton
-        android:id="@+id/radioHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
-        android:buttonTint="#002984"
-        android:text="Home Quarantine"
-        android:textColor="#eee"
-        android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        <RadioButton
+            android:id="@+id/radioQuarNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ps"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/edittext_corners"
+            android:backgroundTint="@color/clr_grey_text_transparent"
+            android:paddingRight="15dp"
+            android:text="No"
+            android:textColor="#8fb1b9"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="@+id/textView8"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
-    <RadioButton
-        android:id="@+id/radioGovt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
-        android:buttonTint="#002984"
-        android:text="Govt. Isolation Center"
-        android:textColor="#eee"
-        android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="@+id/radioHome"
-        app:layout_constraintTop_toBottomOf="@+id/radioHome" />
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Quarantine Type :"
+            android:fontFamily="@font/ps"
 
-    <Button
-        android:id="@+id/SaveDialog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/custom_button_save"
-        android:elevation="5dp"
-        android:text="Save"
-        android:textColor="#eee"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGovt" />
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="@+id/radioQuarYes"
+            app:layout_constraintTop_toBottomOf="@+id/radioQuarYes" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <RadioButton
+            android:id="@+id/radioHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/edittext_corners"
+            android:fontFamily="@font/ps"
+            android:backgroundTint="@color/clr_grey_text_transparent"
+            android:paddingRight="15dp"
+            android:text="Self"
+            android:textColor="#8fb1b9"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/textView9"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+        <RadioButton
+            android:id="@+id/radioGovt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ps"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/edittext_corners"
+            android:backgroundTint="@color/clr_grey_text_transparent"
+            android:paddingRight="15dp"
+            android:text="Isolation Ward"
+            android:textColor="#8fb1b9"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/radioHome"
+            app:layout_constraintTop_toBottomOf="@+id/radioHome" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="10dp"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true"
+            app:contentPadding="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGovt"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/proceed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/back"
+                android:fontFamily="@font/psb"
+                android:padding="4dp"
+
+                android:text="   PROCEED  "
+                android:textColor="#000"
+                android:textSize="13sp" />
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
+
+
+

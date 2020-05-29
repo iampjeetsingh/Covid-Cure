@@ -66,7 +66,6 @@
             android:backgroundTint="@color/clr_grey_text_transparent"
             android:fontFamily="@font/ps"
             android:hint="Age"
-            android:inputType="text"
             android:maxLines="1"
             android:paddingLeft="20dp"
             android:paddingTop="10dp"
@@ -74,6 +73,7 @@
             android:paddingBottom="10dp"
             android:textColor="@color/dark_grey"
             android:textColorHint="#8fb1b9"
+            android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/regName" />
@@ -232,12 +232,13 @@
             app:layout_constraintBottom_toBottomOf="@+id/textView6"
             app:layout_constraintStart_toEndOf="@+id/textView6" />
 
+
         <RadioButton
             android:id="@+id/radioTravelNo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:layout_marginBottom="6dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_corners"
 
             android:paddingEnd="10dp"
@@ -245,9 +246,9 @@
             android:textColor="#000"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/textView6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/radioTravelYes" />
-
-
 
         <ImageView
             android:id="@+id/imageView5"
@@ -319,6 +320,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView6"
             android:background="@drawable/edittext_corners"
+            android:backgroundTint="@color/clr_grey_text_transparent"
             >
 
             <RelativeLayout
