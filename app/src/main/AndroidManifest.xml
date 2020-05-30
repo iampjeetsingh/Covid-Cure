@@ -34,7 +34,7 @@
         -->
         <activity
             android:name=".NewActivity"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" >
+            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -77,7 +77,8 @@
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
 
         </activity>
-
+<activity android:name=".FaqActivity"/>
+        <activity android:name=".activity_contributors"/>
         <service
             android:name=".GeofenceTransitionService"
             android:enabled="true"

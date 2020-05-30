@@ -20,20 +20,22 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginLeft="5dp">
-    <TextView
-        android:id="@+id/question_faq"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        />
-    <TextView
-        android:textSize="20sp"
-        android:id="@+id/answer_faq"
-        android:textColor="@color/color8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+
+        <TextView
+            android:id="@+id/question_faq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/psb"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/answer_faq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ps"
+            android:textColor="@color/color8"
+            android:textSize="20sp" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>
 

@@ -15,7 +15,7 @@ import java.util.List;
 
 public class ContributorsFragment extends Fragment {
 
-    private String[] names = new String[]{"Divyansh Thakur","Naveen Katiyar","Arjun Anand","Vishal Pal","Janmejai Pandey","Paramjeet","Devang Sharma"};
+    private String[] names = new String[]{"Naveen Katiyar","Arjun Anand","Vishal Pal","Janmejai Pandey","Paramjeet","Devang Sharma"};
     private String[] descriptions = new String[]{"","","","","","",""};
     private int[] images = new int[]{0,0,R.drawable.arjun,R.drawable.vishal,R.drawable.janmejai,R.drawable.paramjeet,R.drawable.devang};
 
@@ -41,7 +41,7 @@ public class ContributorsFragment extends Fragment {
             aList.add(hm);
         }
         String[] from = {"Image","Name","Description"};
-        int[] to = {R.id.imageView,R.id.name,R.id.description};
+        int[] to = {R.id.imageView,R.id.name};
         SimpleAdapter simpleAdapter = new SimpleAdapter(getContext(),aList, R.layout.contributors_row,from,to);
         listView.setAdapter(simpleAdapter);
     }
