@@ -47,8 +47,8 @@ public class NewActivity extends AppCompatActivity {
                     case R.id.developers:
                         startActivity(new Intent(NewActivity.this,activity_contributors.class));
                         break;
-                    case R.id.settings:
-                        Toast.makeText(NewActivity.this,"Clicked",Toast.LENGTH_SHORT).show();
+                    case R.id.profile:
+                        startActivity(new Intent(NewActivity.this, RegisterActivity.class));
                         break;
                 }
 

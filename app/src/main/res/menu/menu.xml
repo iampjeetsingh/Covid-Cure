@@ -11,8 +11,8 @@
             android:id="@+id/developers"
             android:title="DEVELOPERS" />
         <item
-            android:id="@+id/settings"
-            android:title="SETTINGS" />
+            android:id="@+id/profile"
+            android:title="PROFILE" />
         <item
             android:id="@+id/logout"
             android:title="LOGOUT" />
