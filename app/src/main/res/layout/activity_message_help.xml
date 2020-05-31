@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        app:layout_constraintBottom_toTopOf="@+id/help_view"
+        app:layout_constraintBottom_toTopOf="@+id/openChatViewLayout"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginBottom="10dp"
@@ -25,6 +25,101 @@
 
 
     </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/openChatViewLayout"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/help_view"
+        app:layout_constraintEnd_toEndOf="parent">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnChatView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorWhite"
+            app:srcCompat="@drawable/ic_forum_black_24dp" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+
+            android:background="@drawable/bot_bg_bubble"
+            app:cardBackgroundColor="@color/colorWhite">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/how_help_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="How May I Help You?"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textSize="20sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/color9"
+                    />
+                <ImageView
+                    android:id="@+id/btnCloselayout"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:gravity="end"
+                    app:srcCompat="@drawable/ic_clear_black_24dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/CloseChatViewLayout"
+        android:visibility="gone"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:orientation="vertical"
+            >
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+
+                android:layout_weight="1">
+            </FrameLayout>
+            <ImageView
+                android:id="@+id/btnOpenChatView"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_gravity="bottom"
+                app:srcCompat="@drawable/ic_clear_black_24dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+            <include
+                android:layout_width="wrap_content"
+                android:layout_height="250dp"
+                android:layout_weight="1"
+                layout="@layout/fragment_faq"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <View
         android:id="@+id/help_view"
@@ -55,7 +150,7 @@
             android:layout_width="match_parent"
             android:layout_marginEnd="50dp"
             android:layout_height="wrap_content"
-            android:hint="Enter Query"
+            android:hint="Enter Response"
             app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText

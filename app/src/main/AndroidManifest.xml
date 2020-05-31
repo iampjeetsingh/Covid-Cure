@@ -65,7 +65,11 @@
         <activity
             android:name=".SplashScreen"
             android:theme="@style/AppTheme.NoActionBar">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
         <activity android:name=".UpdateCasesActivity" />
         <activity android:name=".InfoWeb" />
@@ -98,13 +102,13 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".GeofenceActivity" />
-        <activity android:name=".HelpMessegeActivity">
-         <!--   <intent-filter> -->
-            <!--       <action android:name="android.intent.action.MAIN" /> -->
-
-            <!--  <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!--</intent-filter> -->
-        </activity>
+        <activity android:name=".HelpMessegeActivity"
+            android:theme="@style/AppTheme.NoActionBar"  />
+        <activity android:name=".CovidUpdatesActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".GeofenceFragActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".EditProfileActivity" />
     </application>
 
 </manifest>
