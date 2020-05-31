@@ -37,35 +37,32 @@ public class NewActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
         navigationView=findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.faq:
+        navigationView.setNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()){
+                case R.id.faq:
 
-                       startActivity(new Intent(NewActivity.this,FaqActivity.class));
-                        break;
-                    case R.id.helpline:
+                   startActivity(new Intent(NewActivity.this,FaqActivity.class));
+                    break;
+                case R.id.helpline:
+                    startActivity(new Intent(NewActivity.this,HelpMessegeActivity.class));
+                    break;
+                case R.id.developers:
+                    startActivity(new Intent(NewActivity.this,activity_contributors.class));
+                    break;
+                case R.id.settings:
+                    Toast.makeText(NewActivity.this,"Clicked",Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.logout:
+                    FirebaseAuth.getInstance().signOut();
 
-                        break;
-                    case R.id.developers:
-                        startActivity(new Intent(NewActivity.this,activity_contributors.class));
-                        break;
-                    case R.id.settings:
-                        Toast.makeText(NewActivity.this,"Clicked",Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.logout:
-                        FirebaseAuth.getInstance().signOut();
+                    Intent intent = new Intent(NewActivity.this, PhoneActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
-                        Intent intent = new Intent(NewActivity.this, PhoneActivity.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-
-                        startActivity(intent);
-                        break;
-                }
-
-                return false;
+                    startActivity(intent);
+                    break;
             }
+
+            return false;
         });
 
         helpline = findViewById(R.id.cardView);
@@ -95,4 +92,3 @@ public class NewActivity extends AppCompatActivity {
 
     }
 }
-

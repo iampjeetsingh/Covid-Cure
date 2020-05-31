@@ -102,15 +102,12 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".GeofenceActivity" />
-        <activity android:name=".HelpMessegeActivity">
-<!--            <intent-filter> -->
-<!--                   <action android:name="android.intent.action.MAIN" /> -->
-
-<!--              <category android:name="android.intent.category.LAUNCHER" /> -->
-<!--            </intent-filter> -->
-        </activity>
-        <activity android:name=".CovidUpdatesActivity" />
-        <activity android:name=".GeofenceFragActivity" />
+        <activity android:name=".HelpMessegeActivity"
+            android:theme="@style/AppTheme.NoActionBar"  />
+        <activity android:name=".CovidUpdatesActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".GeofenceFragActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
