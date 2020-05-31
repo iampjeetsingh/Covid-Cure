@@ -19,13 +19,15 @@ public class EditProfileActivity extends AppCompatActivity {
     String quartype;
     Button button;
     TextView cancel;
+    TextView heading;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-
+        heading = findViewById(R.id.textView2);
+        heading.setText("EDIT PROFILE");
         travelYes = findViewById(R.id.radioTravelYes);
         travelNo = findViewById(R.id.radioTravelNo);
         travelYes.setOnClickListener(new View.OnClickListener() {
