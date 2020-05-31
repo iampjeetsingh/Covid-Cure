@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.Build;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
@@ -93,10 +94,12 @@ public class GeofenceTransitionService extends IntentService {
         }
 
         String status = null;
-        if (geoFenceTransition == Geofence.GEOFENCE_TRANSITION_ENTER)
+        if (geoFenceTransition == Geofence.GEOFENCE_TRANSITION_ENTER) {
             status = "Entering ";
-        else if (geoFenceTransition == Geofence.GEOFENCE_TRANSITION_EXIT) {
+            Log.d(TAG, "Breached" + status);
+        } else if (geoFenceTransition == Geofence.GEOFENCE_TRANSITION_EXIT) {
             status = "Exiting ";
+            Log.d(TAG, "Breached" + status);
             SendNotification();
 
         }
@@ -108,7 +111,7 @@ public class GeofenceTransitionService extends IntentService {
 
         preferences = getSharedPreferences("App", MODE_PRIVATE);
         no = preferences.getString("Contact", "");
-
+/*
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = user.getUid();
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Geofencing").child(uid);
@@ -134,6 +137,8 @@ public class GeofenceTransitionService extends IntentService {
         userMap.put("Contact", no);
         reference.setValue(userMap);
 
+
+ */
     }
 
 
@@ -152,11 +157,13 @@ public class GeofenceTransitionService extends IntentService {
 
 
         // Creating and sending Notification
+
         NotificationManager notificatioMng =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         notificatioMng.notify(
                 GEOFENCE_NOTIFICATION_ID,
                 createNotification(msg, notificationPendingIntent));
+
 
     }
 

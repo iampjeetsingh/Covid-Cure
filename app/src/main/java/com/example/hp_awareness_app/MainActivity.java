@@ -131,6 +131,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     LocationFragment locationFragment = new LocationFragment();
     CovidUpdatesFragment covidUpdatesFragment = new CovidUpdatesFragment();
     GeofenceFragment geofenceFragment = new GeofenceFragment();
+    CasesFragment casesFragment = new CasesFragment();
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -160,7 +161,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out).replace(R.id.fragment_container, geofenceFragment).commit();
                 return true;
             case R.id.item4:
-                getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out).replace(R.id.fragment_container, covidUpdatesFragment).commit();
+                getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out).replace(R.id.fragment_container, casesFragment).commit();
                 return true;
             default:
                 getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out).replace(R.id.fragment_container, firstFragment).commit();

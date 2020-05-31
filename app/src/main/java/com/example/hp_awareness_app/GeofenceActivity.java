@@ -12,6 +12,7 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.view.Menu;
@@ -339,7 +340,7 @@ public class GeofenceActivity
             if (locationMarker != null)
                 locationMarker.remove();
             locationMarker = map.addMarker(markerOptions);
-            float zoom = 14f;
+            float zoom = 15f;
             CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, zoom);
             map.animateCamera(cameraUpdate);
 
@@ -400,10 +401,17 @@ public class GeofenceActivity
                             }
 
                         }
-                        l1 = new LatLng(latitude, longitude);
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                l1 = new LatLng(latitude, longitude);
 
-                        markerForGeofence(l1);
+                                markerForGeofence(l1);
 
+
+                            }
+                        }, 10000);
 
                     }
                 }, Looper.getMainLooper());
@@ -447,7 +455,7 @@ public class GeofenceActivity
 
     private static final long GEO_DURATION = 60 * 60 * 1000;
     private static final String GEOFENCE_REQ_ID = "My Geofence";
-    private static final float GEOFENCE_RADIUS = 40.0f; // in meters
+    private static final float GEOFENCE_RADIUS = 100.0f; // in meters
 
     // Create a Geofence
     private Geofence createGeofence(LatLng latLng, float radius) {
