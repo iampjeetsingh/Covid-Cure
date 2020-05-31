@@ -35,11 +35,11 @@
         <activity
             android:name=".NewActivity"
             android:theme="@style/AppTheme.NoActionBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
 
         </activity>
         <activity
@@ -65,7 +65,11 @@
         <activity
             android:name=".SplashScreen"
             android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".UpdateCasesActivity" />
         <activity android:name=".InfoWeb" />
@@ -99,12 +103,14 @@
 
         <activity android:name=".GeofenceActivity" />
         <activity android:name=".HelpMessegeActivity">
-         <!--   <intent-filter> -->
-            <!--       <action android:name="android.intent.action.MAIN" /> -->
+<!--            <intent-filter> -->
+<!--                   <action android:name="android.intent.action.MAIN" /> -->
 
-            <!--  <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!--</intent-filter> -->
+<!--              <category android:name="android.intent.category.LAUNCHER" /> -->
+<!--            </intent-filter> -->
         </activity>
+        <activity android:name=".CovidUpdatesActivity" />
+        <activity android:name=".GeofenceFragActivity" />
     </application>
 
 </manifest>

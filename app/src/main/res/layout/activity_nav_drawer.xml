@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
+    tools:context=".NewActivity">
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_height="match_parent"
         android:layout_width="match_parent">
@@ -150,6 +150,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView"
                         android:layout_width="match_parent"
                         android:layout_height="170dp"
                         android:layout_marginStart="40dp"

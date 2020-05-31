@@ -170,7 +170,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                         handler.postDelayed(new Runnable() {
                             @Override
                             public void run() {
-                                Intent intent = new Intent(VerifyPhoneActivity.this, MainActivity.class);
+                                Intent intent = new Intent(VerifyPhoneActivity.this, NewActivity.class);
                                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 intent.putExtra("type", "User");
                                 startActivity(intent);
