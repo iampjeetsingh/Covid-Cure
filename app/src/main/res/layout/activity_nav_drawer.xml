@@ -22,7 +22,15 @@
             android:layout_height="wrap_content"
             android:background="#FAFAFA"
             android:theme="@style/Theme.AppCompat.Light"/>
-
+        <Button
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/button_back_1"
+            android:text="Admin Dashboard"
+            android:onClick="adminDashClick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">

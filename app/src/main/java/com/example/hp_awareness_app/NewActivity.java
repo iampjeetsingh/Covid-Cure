@@ -126,4 +126,7 @@ public class NewActivity extends AppCompatActivity {
         });
 
     }
+    public void adminDashClick(View v){
+        startActivity(new Intent(NewActivity.this,AdminDashboard.class));
+    }
 }

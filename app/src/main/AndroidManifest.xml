@@ -22,7 +22,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".register_user"></activity>
+        <activity android:name=".AdminDashboard"></activity>
+        <activity android:name=".register_user" />
         <activity android:name=".ProfileActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -34,29 +35,25 @@
         -->
         <activity
             android:name=".NewActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+            android:theme="@style/AppTheme.NoActionBar">
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
 
         </activity>
         <activity
             android:name=".PhoneActivity"
-
-            android:theme="@style/AppTheme.NoActionBar" >
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".AdminLoginActivity" />
         <activity android:name=".AddAdminActivity" />
         <activity
             android:name=".MainActivity"
             android:label=""
-            android:theme="@style/Widget.AppCompat.Light.ActionBar" >
-
-
-        </activity>
+            android:theme="@style/Widget.AppCompat.Light.ActionBar"></activity>
         <activity android:name=".AddArticle" />
         <activity android:name=".ViewArticle" />
         <activity
@@ -73,18 +70,16 @@
         </activity>
         <activity android:name=".UpdateCasesActivity" />
         <activity android:name=".InfoWeb" />
-        <activity android:name=".HelpActivity" >
-
-        </activity>
+        <activity android:name=".HelpActivity"></activity>
         <activity android:name=".Notifications" />
         <activity android:name=".SendMessage" />
         <activity android:name=".GetMessage" />
-        <activity android:name=".RegisterActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name=".RegisterActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".FaqActivity" />
+        <activity android:name=".activity_contributors" />
 
-        </activity>
-<activity android:name=".FaqActivity"/>
-        <activity android:name=".activity_contributors"/>
         <service
             android:name=".GeofenceTransitionService"
             android:enabled="true"
@@ -102,11 +97,14 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".GeofenceActivity" />
-        <activity android:name=".HelpMessegeActivity"
-            android:theme="@style/AppTheme.NoActionBar"  />
-        <activity android:name=".CovidUpdatesActivity"
+        <activity
+            android:name=".HelpMessegeActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".GeofenceFragActivity"
+        <activity
+            android:name=".CovidUpdatesActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".GeofenceFragActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".EditProfileActivity" />
     </application>

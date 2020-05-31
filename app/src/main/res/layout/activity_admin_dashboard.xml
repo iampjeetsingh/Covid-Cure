@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminDashboard">
+
+    <EditText
+        android:id="@+id/total"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/edittext_corners"
+        android:backgroundTint="@color/clr_grey_text_transparent"
+        android:fontFamily="@font/ps"
+        android:hint="Total Cases in India"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/dark_grey"
+        android:textColorHint="#8fb1b9" />
+
+
+    <EditText
+        android:id="@+id/totalRecovered"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/edittext_corners"
+        android:backgroundTint="@color/clr_grey_text_transparent"
+        android:fontFamily="@font/ps"
+        android:hint="Recovered Cases"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/dark_grey"
+        android:textColorHint="#8fb1b9" />
+
+
+    <EditText
+        android:id="@+id/himachal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/edittext_corners"
+        android:backgroundTint="@color/clr_grey_text_transparent"
+        android:fontFamily="@font/ps"
+        android:hint="Total Cases in Himachal Pradesh"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/dark_grey"
+        android:textColorHint="#8fb1b9" />
+
+    <Button
+        android:onClick="updateClick"
+        android:textColor="@android:color/white"
+        android:text="Update Data"
+        android:background="@drawable/button_back_1"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+    <Button
+        android:onClick="viewClick"
+        android:textColor="@android:color/white"
+        android:background="@drawable/button_back_2"
+        android:text="View Messages"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
