@@ -2,6 +2,7 @@ package com.example.hp_awareness_app;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,6 +38,7 @@ public class HelpMessegeActivity extends AppCompatActivity {
     String no;
     private static HelpMessegeActivity instance;
     String adminUid;
+    String QueryType;
     private static final int USER = 10001;
     private static final int BOT = 10002;
 
@@ -62,8 +64,8 @@ public class HelpMessegeActivity extends AppCompatActivity {
 
         preferences = getSharedPreferences("App", MODE_PRIVATE);
 
-//        adminUid = preferences.getString("adminUid", "");
-//        no = preferences.getString("Contact", "");
+        adminUid = preferences.getString("adminUid", "");
+        no = preferences.getString("Contact", "");
 //        contact.setText(no);
 //
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd 'at' HH:mm:ss ");
@@ -84,6 +86,32 @@ public class HelpMessegeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String res = sendMessage();
+
+                switch (QueryType) {
+                    case "Name":
+                        name = res;
+                        showTextViewWithoutFocus("Hi " + name, BOT);
+                        QueryType = "Address";
+                        showTextView("Please Enter  your current address", BOT);
+                        break;
+                    case "Address":
+                        address = res;
+                        showTextViewWithoutFocus("you entered address - " + address, BOT);
+                        QueryType = "Messege";
+                        showTextView("What Do you Want to ask?", BOT);
+                        break;
+                    case "Messege":
+                        message = res;
+                        showTextViewWithoutFocus("Sending your request to authorities - " + message, BOT);
+                        SendData();
+                        QueryType = "Done";
+                        showTextViewWithoutFocus("Will reach you ASAP", BOT);
+                        break;
+                    case "Done":
+                        QueryType = "Done";
+                        showTextViewWithoutFocus("Already sent your request wait for reply!!", BOT);
+                        break;
+                }
             }
         });
 
@@ -95,6 +123,33 @@ public class HelpMessegeActivity extends AppCompatActivity {
                     case KeyEvent.KEYCODE_DPAD_CENTER:
                     case KeyEvent.KEYCODE_ENTER:
                         String res = sendMessage();
+
+                        switch (QueryType) {
+                            case "Name":
+                                name = res;
+                                showTextViewWithoutFocus("Hi " + name, BOT);
+                                QueryType = "Address";
+                                showTextView("Please Enter  your current address", BOT);
+                                break;
+                            case "Address":
+                                address = res;
+                                showTextViewWithoutFocus("you entered address - " + address, BOT);
+                                QueryType = "Messege";
+                                showTextView("What Do you Want to ask?", BOT);
+                                break;
+                            case "Messege":
+                                message = res;
+                                showTextViewWithoutFocus("Sending your request to authorities - " + message, BOT);
+                                SendData();
+                                QueryType = "Done";
+                                showTextViewWithoutFocus("Will reach you ASAP", BOT);
+                                break;
+                            case "Done":
+                                QueryType = "Done";
+                                showTextViewWithoutFocus("Already sent your request wait for reply!!", BOT);
+                                break;
+                        }
+
                         return true;
                     default:
                         break;
@@ -106,7 +161,10 @@ public class HelpMessegeActivity extends AppCompatActivity {
         String userName = "USER";
 
         showTextViewWithoutFocus("Welcome to the Helpline" ,BOT);
+        QueryType = "Name";
         showTextViewWithoutFocus("Hello!! Please Enter Your Name?",BOT);
+
+
 
     }
 
@@ -142,7 +200,7 @@ public class HelpMessegeActivity extends AppCompatActivity {
         if (msg.trim().isEmpty()) {
             Toast.makeText(this, "Please enter your query!", Toast.LENGTH_LONG).show();
 
-            return "Null";
+            return "NoInput";
         } else {
             showTextView(msg, USER);
 //            name = msg;
@@ -191,6 +249,7 @@ public class HelpMessegeActivity extends AppCompatActivity {
 
 
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        assert firebaseUser != null;
         String uID = firebaseUser.getUid();
         userDatabase = FirebaseDatabase.getInstance().getReference().child("Admin");
         HashMap<String, String> userMap = new HashMap<>();
@@ -201,11 +260,10 @@ public class HelpMessegeActivity extends AppCompatActivity {
         userMap.put("Message", message);
         userMap.put("Id", uID);
         userDatabase.child(uID).setValue(userMap);
-        sendButton.setText("Message Sent");
-        sendButton.setEnabled(false);
+
         editor = preferences.edit();
         editor.putString("Date&Time", dateTime);
-        editor.commit();
+        editor.apply();
 /*
         adminRef = FirebaseDatabase.getInstance().getReference().child("User").child("JioUKTzeV5WPsdcU3ckmf8QvghJ3");
         HashMap<String, String> map = new HashMap<>();
@@ -214,9 +272,5 @@ public class HelpMessegeActivity extends AppCompatActivity {
 
  */
     }
-
-
-
-
 
 }
