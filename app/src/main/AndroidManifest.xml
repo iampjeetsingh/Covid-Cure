@@ -80,7 +80,7 @@
         <activity android:name=".SendMessage" />
         <activity android:name=".GetMessage" />
         <activity android:name=".RegisterActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
 <activity android:name=".FaqActivity"/>

@@ -8,357 +8,366 @@
    >
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#eeee"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView2"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="175dp"
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="178dp"
-            android:fontFamily="@font/ps"
-            android:text="REGISTER USER"
-            android:textColor="@color/dark_grey"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="match_parent"
+            android:background="#eeee"
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/regName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="63dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/edittext_corners"
-            android:backgroundTint="@color/clr_grey_text_transparent"
-            android:fontFamily="@font/ps"
-            android:hint="Name"
-            android:inputType="text"
-            android:maxLines="1"
-            android:paddingLeft="20dp"
-            android:paddingTop="10dp"
-            android:paddingRight="32dp"
-            android:paddingBottom="10dp"
-            android:textColor="@color/dark_grey"
-            android:textColorHint="#8fb1b9"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-        <EditText
-            android:id="@+id/regAge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="63dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/edittext_corners"
-            android:backgroundTint="@color/clr_grey_text_transparent"
-            android:fontFamily="@font/ps"
-            android:hint="Age"
-            android:maxLines="1"
-            android:paddingLeft="20dp"
-            android:paddingTop="10dp"
-            android:paddingRight="32dp"
-            android:paddingBottom="10dp"
-            android:textColor="@color/dark_grey"
-            android:textColorHint="#8fb1b9"
-            android:inputType="number"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/regName" />
-
-        <EditText
-            android:id="@+id/regContact"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="63dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/edittext_corners"
-            android:backgroundTint="@color/clr_grey_text_transparent"
-            android:fontFamily="@font/ps"
-            android:hint="Phone Number"
-            android:inputType="number"
-            android:maxLines="1"
-            android:paddingLeft="20dp"
-            android:paddingTop="10dp"
-            android:paddingRight="32dp"
-            android:paddingBottom="10dp"
-            android:textColor="@color/dark_grey"
-            android:textColorHint="#8fb1b9"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/regAge" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/edittext_corners"
-            android:backgroundTint="@color/clr_grey_text_transparent"
-            android:fontFamily="@font/ps"
-            android:paddingLeft="17dp"
-            android:paddingTop="10dp"
-            android:paddingRight="32dp"
-            android:paddingBottom="10dp"
-            android:text="Gender"
-            android:textColor="#8fb1b9"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/regContact"
-            app:layout_constraintTop_toBottomOf="@+id/regContact" />
-
-        <RadioButton
-            android:id="@+id/radioMale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="5dp"
-
-            android:background="@drawable/edittext_corners"
-
-            android:paddingRight="7dp"
-            android:text="Male"
-
-            android:textColor="#000"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView3"
-            app:layout_constraintStart_toEndOf="@+id/textView3" />
-
-        <RadioButton
-            android:id="@+id/radioFemale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="7dp"
-            android:background="@drawable/edittext_corners"
-            android:paddingRight="7dp"
-            android:text="Female"
-            android:textColor="#000"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/radioMale"
-            app:layout_constraintStart_toEndOf="@+id/radioMale" />
-
-        <EditText
-            android:id="@+id/regAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="63dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/edittext_corners"
-            android:backgroundTint="@color/clr_grey_text_transparent"
-            android:fontFamily="@font/ps"
-            android:hint="Address"
-            android:inputType="text"
-            android:maxLines="1"
-            android:paddingLeft="32dp"
-            android:paddingTop="10dp"
-            android:paddingRight="32dp"
-            android:paddingBottom="10dp"
-            android:textColor="@color/dark_grey"
-            android:textColorHint="#8fb1b9"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioFemale" />
-
-        <ImageButton
-            android:id="@+id/fetchAddress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:background="@drawable/edittext"
-            app:layout_constraintStart_toStartOf="@+id/regAddress"
-            app:layout_constraintTop_toBottomOf="@+id/regAddress"
-            app:srcCompat="@drawable/location_register" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="7dp"
-            android:layout_marginTop="7dp"
-            android:text="Use current location"
-            android:textColor="#8fb1b9"
-            android:textSize="18sp"
-            app:layout_constraintStart_toEndOf="@+id/fetchAddress"
-            app:layout_constraintTop_toBottomOf="@+id/regAddress" />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/edittext_corners"
-            android:backgroundTint="@color/clr_grey_text_transparent"
-            android:fontFamily="@font/ps"
-            android:paddingLeft="17dp"
-            android:paddingTop="10dp"
-            android:paddingRight="12dp"
-            android:paddingBottom="10dp"
-            android:text="Any travel history"
-            android:textColor="#8fb1b9"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/fetchAddress"
-            app:layout_constraintTop_toBottomOf="@+id/fetchAddress" />
-
-        <RadioButton
-            android:id="@+id/radioTravelYes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="6dp"
-            android:background="@drawable/edittext_corners"
-
-            android:paddingRight="7dp"
-            android:text="Yes"
-            android:textColor="#000"
-            android:textSize="18sp"
-
-            app:layout_constraintBottom_toBottomOf="@+id/textView6"
-            app:layout_constraintStart_toEndOf="@+id/textView6" />
-
-
-        <RadioButton
-            android:id="@+id/radioTravelNo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/edittext_corners"
-
-            android:paddingEnd="10dp"
-            android:text="No"
-            android:textColor="#000"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView6"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/radioTravelYes" />
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="39dp"
-            android:layout_height="42dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/regName"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:srcCompat="@drawable/ic_name" />
-
-        <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="39dp"
-            android:layout_height="42dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/regAge"
-            app:layout_constraintTop_toBottomOf="@+id/regName"
-            app:srcCompat="@drawable/ic_age" />
-
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="39dp"
-            android:layout_height="42dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/regContact"
-            app:layout_constraintTop_toBottomOf="@+id/regAge"
-            app:srcCompat="@drawable/ic_phone" />
-
-        <ImageView
-            android:id="@+id/imageView9"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="7dp"
-            app:layout_constraintEnd_toStartOf="@+id/regAddress"
-            app:layout_constraintTop_toBottomOf="@+id/radioMale"
-            app:srcCompat="@drawable/ic_location" />
-
-        <ImageView
-            android:id="@+id/imageView10"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="7dp"
-            app:layout_constraintEnd_toStartOf="@+id/textView6"
-            app:layout_constraintTop_toBottomOf="@+id/textView5"
-            app:srcCompat="@drawable/ic_travel" />
-
-        <ImageView
-            android:id="@+id/imageView11"
-            android:layout_width="39dp"
-            android:layout_height="42dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/textView3"
-            app:layout_constraintTop_toBottomOf="@+id/regContact"
-            app:srcCompat="@drawable/ic_sex" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardSave"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:background="@drawable/edittext_corners"
-           app:cardBackgroundColor="@color/clr_grey_text_transparent"
-
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6">
-
-            <RelativeLayout
+            <TextView
+                android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/edittext_corners"
-                android:backgroundTint="@color/clr_grey_text_transparent">
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/ps"
+                android:text="REGISTER USER"
+                android:textColor="@color/dark_grey"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:onClick="registerClick"
-                    android:id="@+id/save"
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:id="@+id/regName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/edittext_corners"
+                android:backgroundTint="@color/clr_grey_text_transparent"
+                android:fontFamily="@font/ps"
+                android:hint="Name"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="32dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/dark_grey"
+                android:textColorHint="#8fb1b9"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView5"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:id="@+id/regAge"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/edittext_corners"
+                android:backgroundTint="@color/clr_grey_text_transparent"
+                android:fontFamily="@font/ps"
+                android:hint="Age"
+                android:inputType="number"
+                android:maxLines="1"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="32dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/dark_grey"
+                android:textColorHint="#8fb1b9"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView7"
+                app:layout_constraintTop_toBottomOf="@+id/regName" />
+
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:id="@+id/regContact"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/edittext_corners"
+                android:backgroundTint="@color/clr_grey_text_transparent"
+                android:fontFamily="@font/ps"
+                android:hint="Phone Number"
+                android:inputType="phone"
+                android:maxLines="1"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="32dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/dark_grey"
+                android:textColorHint="#8fb1b9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/imageView8"
+                app:layout_constraintTop_toBottomOf="@+id/regAge" />
+
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edittext_corners"
+                android:backgroundTint="@color/clr_grey_text_transparent"
+                android:fontFamily="@font/ps"
+                android:paddingLeft="17dp"
+                android:paddingTop="10dp"
+                android:paddingRight="32dp"
+                android:paddingBottom="10dp"
+                android:text="Gender"
+                android:textColor="#8fb1b9"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/imageView11"
+                app:layout_constraintTop_toBottomOf="@+id/regContact" />
+
+            <RadioButton
+                android:id="@+id/radioMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="5dp"
+
+                android:background="@drawable/edittext_corners"
+
+                android:paddingRight="7dp"
+                android:text="Male"
+
+                android:textColor="#000"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView3"
+                app:layout_constraintStart_toEndOf="@+id/textView3" />
+
+            <RadioButton
+                android:id="@+id/radioFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:background="@drawable/edittext_corners"
+                android:paddingRight="7dp"
+                android:text="Female"
+                android:textColor="#000"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/radioMale"
+                app:layout_constraintStart_toEndOf="@+id/radioMale" />
+
+            <EditText
+                android:layout_marginLeft="20dp"
+                app:layout_constraintHorizontal_bias="0"
+                android:id="@+id/regAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/edittext_corners"
+                android:backgroundTint="@color/clr_grey_text_transparent"
+                android:fontFamily="@font/ps"
+                android:hint="Address"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingLeft="32dp"
+                android:paddingTop="10dp"
+                android:paddingRight="32dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/dark_grey"
+                android:textColorHint="#8fb1b9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView9"
+                app:layout_constraintTop_toBottomOf="@+id/radioFemale" />
+
+            <ImageButton
+                android:id="@+id/fetchAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/edittext"
+                app:layout_constraintStart_toStartOf="@+id/regAddress"
+                app:layout_constraintTop_toBottomOf="@+id/regAddress"
+                app:srcCompat="@drawable/location_register" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="7dp"
+                android:text="Use current location"
+                android:textColor="#8fb1b9"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/fetchAddress"
+                app:layout_constraintTop_toBottomOf="@+id/regAddress" />
+
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edittext_corners"
+                android:backgroundTint="@color/clr_grey_text_transparent"
+                android:fontFamily="@font/ps"
+                android:paddingLeft="17dp"
+                android:paddingTop="10dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="10dp"
+                android:text="Any travel history"
+                android:textColor="#8fb1b9"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/imageView10"
+                app:layout_constraintTop_toBottomOf="@+id/fetchAddress" />
+
+            <RadioButton
+                android:id="@+id/radioTravelYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/edittext_corners"
+
+                android:paddingRight="7dp"
+                android:text="Yes"
+                android:textColor="#000"
+                android:textSize="18sp"
+
+                app:layout_constraintBottom_toBottomOf="@+id/textView6"
+                app:layout_constraintStart_toEndOf="@+id/textView6" />
+
+
+            <RadioButton
+                android:id="@+id/radioTravelNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/edittext_corners"
+
+                android:paddingEnd="10dp"
+                android:text="No"
+                android:textColor="#000"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/radioTravelYes" />
+
+            <ImageView
+                android:layout_marginLeft="20dp"
+                android:id="@+id/imageView5"
+                android:layout_width="39dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2"
+                app:srcCompat="@drawable/ic_name" />
+
+            <ImageView
+                android:layout_marginLeft="20dp"
+                android:id="@+id/imageView7"
+                android:layout_width="39dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/regName"
+                app:srcCompat="@drawable/ic_age" />
+
+            <ImageView
+                android:layout_marginLeft="20dp"
+                android:id="@+id/imageView8"
+                android:layout_width="39dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/regAge"
+                app:srcCompat="@drawable/ic_phone" />
+
+            <ImageView
+                android:layout_marginLeft="20dp"
+                android:id="@+id/imageView9"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioMale"
+                app:srcCompat="@drawable/ic_location" />
+
+            <ImageView
+                android:layout_marginLeft="20dp"
+                android:id="@+id/imageView10"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                app:srcCompat="@drawable/ic_travel" />
+
+            <ImageView
+                android:layout_marginLeft="20dp"
+                android:id="@+id/imageView11"
+                android:layout_width="39dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/regContact"
+                app:srcCompat="@drawable/ic_sex" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/edittext_corners"
+                app:cardBackgroundColor="@color/clr_grey_text_transparent"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6">
+
+                <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:fontFamily="@font/ps"
-                    android:gravity="center"
-                    android:paddingLeft="16dp"
-                    android:paddingTop="8dp"
-                    android:paddingRight="16dp"
-                    android:paddingBottom="8dp"
-                    android:text="SAVE"
-                    android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    android:background="@drawable/edittext_corners"
+                    android:backgroundTint="@color/clr_grey_text_transparent">
 
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:onClick="registerClick"
+                        android:id="@+id/save"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/ps"
+                        android:gravity="center"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="8dp"
+                        android:text="SAVE"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
 
-        <com.airbnb.lottie.LottieAnimationView
-            android:layout_width="170dp"
-            android:layout_height="170dp"
-            android:layout_marginTop="25dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardSave"
-            app:lottie_fileName="registeranim.json"
-            app:lottie_loop="true"
-            app:lottie_autoPlay="true"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_marginTop="25dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardSave"
+                app:lottie_fileName="registeranim.json"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="true"/>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </HorizontalScrollView>
 </ScrollView>

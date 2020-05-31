@@ -53,7 +53,7 @@ public class NewActivity extends AppCompatActivity {
                     startActivity(new Intent(NewActivity.this,activity_contributors.class));
                     break;
                 case R.id.edit_prifile:
-                    startActivity(new Intent(NewActivity.this,EditProfileActivity.class));
+                    startActivity(new Intent(NewActivity.this,RegisterActivity.class));
                     break;
                 case R.id.settings:
                     Toast.makeText(NewActivity.this,"Clicked",Toast.LENGTH_SHORT).show();

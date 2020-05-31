@@ -47,8 +47,6 @@
             android:background="@drawable/edittext"
             android:fontFamily="@font/ps"
             android:text="Are you quarantined?"
-
-
             android:textSize="22sp"
             app:layout_constraintStart_toStartOf="@+id/recentPlace"
             app:layout_constraintTop_toBottomOf="@+id/recentPlace" />

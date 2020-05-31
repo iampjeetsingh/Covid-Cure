@@ -36,7 +36,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/cardView2"
                         android:layout_width="match_parent"
-                        android:layout_height="170dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginStart="40dp"
                         android:layout_marginTop="200dp"
                         android:layout_marginEnd="40dp"
