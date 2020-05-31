@@ -89,16 +89,13 @@ public class HelpMessegeActivity extends AppCompatActivity {
 
         if (Objects.equals(type, "Admin")) {
             bell.setOnClickListener(v -> {
-                Intent intent = new Intent(this, Notifications.class);
+                Intent intent = new Intent(HelpMessegeActivity.this, Notifications.class);
                 startActivity(intent);
             });
         }
         if (Objects.equals(type, "User")) {
-
-
-
             bell.setOnClickListener(v -> {
-                Intent intent = new Intent(this, GetMessage.class);
+                Intent intent = new Intent(HelpMessegeActivity.this, GetMessage.class);
                 startActivity(intent);
             });
         }
