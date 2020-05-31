@@ -23,7 +23,7 @@ public class HelpActivity extends AppCompatActivity {
     DatabaseReference userDatabase;
     EditText name, contact, address, message;
     String dateTime;
-  static Button sendButton;
+    static Button sendButton;
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
     String no;

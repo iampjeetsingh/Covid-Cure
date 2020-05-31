@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
-    android:id="@+id/drawer"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.drawerlayout.widget.DrawerLayout android:id="@+id/drawer"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +21,8 @@
             android:layout_height="wrap_content"
             android:background="#FAFAFA"
             android:theme="@style/Theme.AppCompat.Light"
-            android:id="@+id/mytoolbar">
+            android:id="@+id/mytoolbar" />
+
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -141,21 +144,21 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </ScrollView>
 
-        </androidx.appcompat.widget.Toolbar>
+
     </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/nav_view"
-        android:layout_gravity="start"
+        android:layout_gravity="start|left"
         app:menu="@menu/menu"
         app:headerLayout="@layout/nav_header">
 
     </com.google.android.material.navigation.NavigationView>
 
-
-
 </androidx.drawerlayout.widget.DrawerLayout>
+
 
 

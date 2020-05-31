@@ -69,7 +69,9 @@
         </activity>
         <activity android:name=".UpdateCasesActivity" />
         <activity android:name=".InfoWeb" />
-        <activity android:name=".HelpActivity" />
+        <activity android:name=".HelpActivity" >
+
+        </activity>
         <activity android:name=".Notifications" />
         <activity android:name=".SendMessage" />
         <activity android:name=".GetMessage" />
@@ -96,6 +98,13 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".GeofenceActivity" />
+        <activity android:name=".HelpMessegeActivity" >
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
     </application>
 
 </manifest>

@@ -3,27 +3,19 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/faq"
-            android:title="FAQ"
-            ></item>
+            android:title="FAQ" />
         <item
             android:id="@+id/helpline"
-            android:title="HELPLINE"
-            ></item>
+            android:title="HELPLINE" />
         <item
             android:id="@+id/developers"
-            android:title="DEVELOPERS"
-            ></item>
+            android:title="DEVELOPERS" />
         <item
             android:id="@+id/settings"
-            android:title="SETTINGS"
-            ></item>
+            android:title="SETTINGS" />
         <item
             android:id="@+id/logout"
-            android:title="LOGOUT"
-            ></item>
-
-
-
+            android:title="LOGOUT" />
 
     </group>
 
