@@ -16,6 +16,8 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -31,8 +33,11 @@ import com.google.cloud.dialogflow.v2.SessionsSettings;
 import com.google.cloud.dialogflow.v2.TextInput;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
@@ -50,6 +55,7 @@ public class HelpMessegeActivity extends AppCompatActivity {
     String dateTime;
     static Button sendButton;
     SharedPreferences preferences;
+    HashMap<String, Object> map;
     SharedPreferences.Editor editor;
     private static final String TAG = MainActivity.class.getSimpleName();
     String no;
@@ -116,6 +122,7 @@ public class HelpMessegeActivity extends AppCompatActivity {
 //
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd 'at' HH:mm:ss ");
         dateTime = sdf.format(new Date());
+
 
 
         ///ChatView
@@ -268,9 +275,26 @@ public class HelpMessegeActivity extends AppCompatActivity {
             return false;
         });
 
+        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        FirebaseDatabase.getInstance().getReference().child("Users").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                map = (HashMap<String, Object>) dataSnapshot.getValue();
+                if (map != null) {
+                    String userName = String.valueOf(map.get("name"));
+                    showTextViewWithoutFocus("Welcome to the FAQ" ,BOT);
+                    showTextViewWithoutFocus("Hello " + userName + " !!",BOT);
+                }
+            }
 
-        showTextViewWithoutFocus("Welcome to the FAQ" ,BOT);
-        showTextViewWithoutFocus("Hello " + userName + " !!",BOT);
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("UserName",databaseError.getMessage());
+            }
+        });
+
+
+
 
         // Java V2
         initV2Chatbot();
