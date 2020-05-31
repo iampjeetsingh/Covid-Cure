@@ -18,6 +18,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class NewActivity extends AppCompatActivity {
     Toolbar toolbar;
@@ -52,6 +53,14 @@ public class NewActivity extends AppCompatActivity {
                         break;
                     case R.id.settings:
                         Toast.makeText(NewActivity.this,"Clicked",Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.logout:
+                        FirebaseAuth.getInstance().signOut();
+
+                        Intent intent = new Intent(NewActivity.this, PhoneActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+                        startActivity(intent);
                         break;
                 }
 
