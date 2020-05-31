@@ -5,6 +5,16 @@
     android:background="@drawable/chatbot_backgroud"
 
     xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:id="@+id/bell"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="20dp"
+        app:srcCompat="@drawable/ic_notifications_active_black_24dp" />
 
     <ScrollView
         android:id="@+id/helpScrollView"

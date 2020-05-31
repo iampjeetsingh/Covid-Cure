@@ -24,15 +24,18 @@ public class NewActivity extends AppCompatActivity {
     Toolbar toolbar;
     DrawerLayout drawerLayout;
     CardView helpline,updates,virtual_fence;
+    static String type = null;
     ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nav_drawer);
         toolbar=findViewById(R.id.mytoolbar);
         drawerLayout=findViewById(R.id.drawer);
         setSupportActionBar(toolbar);
+        type = getIntent().getStringExtra("type");
         actionBarDrawerToggle=new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.app_name,R.string.app_name);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();

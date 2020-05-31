@@ -1,5 +1,6 @@
 package com.example.hp_awareness_app;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -38,6 +39,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.UUID;
 
 public class HelpMessegeActivity extends AppCompatActivity {
@@ -57,6 +59,7 @@ public class HelpMessegeActivity extends AppCompatActivity {
     private static final int USER = 10001;
     private static final int BOT = 10002;
 
+    ImageView bell;
     private String uuid = UUID.randomUUID().toString();
     private LinearLayout helpLayout;
     private EditText helpQueryEditText;
@@ -80,6 +83,27 @@ public class HelpMessegeActivity extends AppCompatActivity {
 
 //        LayoutDetails();
         instance = this;
+        bell = findViewById(R.id.bell);
+
+        String type = NewActivity.type;
+
+        if (Objects.equals(type, "Admin")) {
+            bell.setOnClickListener(v -> {
+                Intent intent = new Intent(this, Notifications.class);
+                startActivity(intent);
+            });
+        }
+        if (Objects.equals(type, "User")) {
+
+
+
+            bell.setOnClickListener(v -> {
+                Intent intent = new Intent(this, GetMessage.class);
+                startActivity(intent);
+            });
+        }
+
+
 //        helpSendBtn.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {

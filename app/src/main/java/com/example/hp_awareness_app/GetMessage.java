@@ -35,6 +35,7 @@ public class GetMessage extends AppCompatActivity {
 
         reply = findViewById(R.id.reply);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        assert user != null;
         String uiD = user.getUid();
 
         preferences = getSharedPreferences("App", MODE_PRIVATE);
