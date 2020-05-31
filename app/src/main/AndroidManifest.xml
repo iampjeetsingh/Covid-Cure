@@ -108,6 +108,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".GeofenceFragActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".EditProfileActivity" />
     </application>
 
 </manifest>
