@@ -3,6 +3,8 @@ package com.example.hp_awareness_app;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -133,6 +135,7 @@ public class RegisterActivity extends AppCompatActivity {
             back.setOnClickListener(v1 ->{
                 dialog.dismiss();
             });
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             dialog.show();
         }
         Map<String,Object> objectMap = new HashMap<>();
@@ -151,7 +154,7 @@ public class RegisterActivity extends AppCompatActivity {
         Intent intent = new Intent(RegisterActivity.this, NewActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         intent.putExtra("type", "User");
-        startActivity(intent);
+       // startActivity(intent);
     }
 
 
@@ -200,6 +203,7 @@ public class RegisterActivity extends AppCompatActivity {
             places = recentPlace.getText().toString();
         });
 
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
     }
 

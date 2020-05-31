@@ -21,7 +21,7 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardView2"
+            android:id="@+id/cardViewUpdate"
             android:layout_width="match_parent"
             android:layout_height="170dp"
             android:layout_marginStart="40dp"
@@ -46,7 +46,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardView3"
+            android:id="@+id/cardViewfence"
 
             android:layout_width="match_parent"
             android:layout_height="170dp"
@@ -58,7 +58,7 @@
             app:cardElevation="3dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView2" >
+            app:layout_constraintTop_toBottomOf="@+id/cardViewUpdate" >
 
             <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="125dp"
@@ -82,7 +82,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView3">
+            app:layout_constraintTop_toBottomOf="@+id/cardViewfence">
 
             <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="110dp"

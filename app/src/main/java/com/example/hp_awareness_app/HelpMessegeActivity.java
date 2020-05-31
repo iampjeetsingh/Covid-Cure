@@ -91,20 +91,7 @@ public class HelpMessegeActivity extends AppCompatActivity {
         instance = this;
         bell = findViewById(R.id.bell);
 
-        String type = NewActivity.type;
 
-        if (Objects.equals(type, "Admin")) {
-            bell.setOnClickListener(v -> {
-                Intent intent = new Intent(HelpMessegeActivity.this, Notifications.class);
-                startActivity(intent);
-            });
-        }
-        if (Objects.equals(type, "User")) {
-            bell.setOnClickListener(v -> {
-                Intent intent = new Intent(HelpMessegeActivity.this, GetMessage.class);
-                startActivity(intent);
-            });
-        }
 
 
 //        helpSendBtn.setOnClickListener(new View.OnClickListener() {
@@ -192,10 +179,10 @@ public class HelpMessegeActivity extends AppCompatActivity {
                                 break;
                             case "Messege":
                                 message = res;
-                                showHelpTextViewWithoutFocus("Sending your request to authorities - " + message, BOT);
+                                showHelpTextViewWithoutFocus("Message Sent." + message, BOT);
                                 SendData();
                                 QueryType = "Done";
-                                showHelpTextViewWithoutFocus("Will reach you ASAP", BOT);
+                                showHelpTextViewWithoutFocus("Please wait for reply before sending another messsage.", BOT);
                                 break;
                             case "Done":
                                 QueryType = "Done";

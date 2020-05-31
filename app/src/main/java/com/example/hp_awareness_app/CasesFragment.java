@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,7 +22,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
-public class CasesFragment extends Fragment {
+public class CasesFragment extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private List<DistrictCases> districtCases;
@@ -40,12 +41,14 @@ public class CasesFragment extends Fragment {
     Integer SoA, SoR, SoC, SoD;
     Integer UnA, UnR, UnC, UnD;
 
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_cases, container, false);
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_cases);
+        GetData();
+    }
 
-
+    private void GetData() {
         CovidApiService service = RetrofitclientInstance.getRetrofitInstance().create(CovidApiService.class);
         Call<ModelCovidCase> call = service.getStatus(BASE_URL);
         call.enqueue(new Callback<ModelCovidCase>() {
@@ -116,9 +119,9 @@ public class CasesFragment extends Fragment {
                     districtCases.add(new DistrictCases("Una", UnA, UnC, UnR, UnD));
 
 
-                    recyclerView = (RecyclerView) view.findViewById(R.id.caseRecycler);
-                    BilaspurAdapter adapter = new BilaspurAdapter(districtCases, getContext());
-                    recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+                    recyclerView = (RecyclerView) findViewById(R.id.caseRecycler);
+                    BilaspurAdapter adapter = new BilaspurAdapter(districtCases, CasesFragment.this);
+                    recyclerView.setLayoutManager(new LinearLayoutManager(CasesFragment.this));
                     recyclerView.setAdapter(adapter);
                     Log.d("Response", "Success" + response.code());
 
@@ -133,6 +136,7 @@ public class CasesFragment extends Fragment {
         });
 
 
-        return view;
     }
+
+
 }
