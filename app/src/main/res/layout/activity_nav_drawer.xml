@@ -11,26 +11,19 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/mytoolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FAFAFA"
-            android:theme="@style/Theme.AppCompat.Light"/>
-        <Button
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:textColor="@android:color/white"
-            android:background="@drawable/button_back_1"
-            android:text="Admin Dashboard"
-            android:onClick="adminDashClick"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/mytoolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FAFAFA"
+                android:theme="@style/Theme.AppCompat.Light" />
+
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -44,7 +37,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/cardView2"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="170dp"
                         android:layout_marginStart="40dp"
                         android:layout_marginTop="200dp"
                         android:layout_marginEnd="40dp"
@@ -56,68 +49,94 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
 
-                        <com.airbnb.lottie.LottieAnimationView
-                            android:layout_width="90dp"
-                            android:layout_height="90dp"
-                            android:paddingLeft="10dp"
-                            android:paddingTop="10dp"
-                            app:lottie_autoPlay="true"
-                            app:lottie_fileName="bimaarbacha.json"
-                            app:lottie_loop="true" />
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
 
-                        <TextView
-                            android:id="@+id/textView17"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="120dp"
-                            android:layout_marginTop="15dp"
-                            android:fontFamily="@font/psb"
-                            android:text="UPDATES"
-                            android:textColor="@color/black"
-                            android:textSize="20sp" />
+                            <com.airbnb.lottie.LottieAnimationView
+                                android:id="@+id/lottieAnimationView2"
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginTop="4dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:lottie_autoPlay="true"
+                                app:lottie_fileName="bimaarbacha.json"
+                                app:lottie_loop="true" />
 
-                        <TextView
-                            android:id="@+id/textView18"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="120dp"
-                            android:layout_marginTop="45dp"
-                            android:fontFamily="@font/ps"
-                            android:text="INDIA : 1,82,490"
-                            android:textColor="@color/black"
-                            android:textSize="18sp" />
+                            <TextView
+                                android:id="@+id/updates"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="24dp"
+                                android:layout_marginTop="4dp"
+                                android:fontFamily="@font/psb"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:text="UPDATES"
+                                android:textColor="@color/black"
+                                android:textSize="22sp"
+                                app:layout_constraintStart_toEndOf="@+id/lottieAnimationView2"
+                                app:layout_constraintTop_toTopOf="parent" />
 
-                        <TextView
-                            android:id="@+id/textView19"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="139dp"
-                            android:fontFamily="@font/ps"
-                            android:text="Click here to get full updates about your state"
-                            android:textColor="@color/black" />
+                            <TextView
+                                android:id="@+id/india"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="24dp"
+                                android:layout_marginTop="8dp"
+                                android:fontFamily="@font/ps"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:text="INDIA : 1,82,490"
+                                android:textSize="20sp"
+                                app:layout_constraintStart_toEndOf="@+id/lottieAnimationView2"
+                                app:layout_constraintTop_toBottomOf="@+id/updates" />
 
-                        <TextView
-                            android:id="@+id/textView20"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="78dp"
-                            android:layout_marginTop="105dp"
-                            android:fontFamily="@font/ps"
-                            android:text="HIMACHAL PRADESH : 313"
-                            android:textColor="@color/black"
-                            android:textSize="18sp" />
+                            <TextView
+                                android:id="@+id/recovered"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="24dp"
+                                android:layout_marginTop="8dp"
+                                android:fontFamily="@font/ps"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:text="RECOVERED : 82,000"
+                                android:textSize="20sp"
+                                app:layout_constraintStart_toEndOf="@+id/lottieAnimationView2"
+                                app:layout_constraintTop_toBottomOf="@+id/india" />
 
-                        <TextView
-                            android:id="@+id/textView21"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="120dp"
-                            android:layout_marginTop="75dp"
-                            android:fontFamily="@font/ps"
-                            android:text="RECOVERED : 86,970"
-                            android:textColor="@color/black"
-                            android:textSize="18sp" />
+                            <TextView
+                                android:id="@+id/hp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="104dp"
+                                android:layout_marginTop="8dp"
+                                android:fontFamily="@font/ps"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:text="HIMACHAL PRADESH : 313"
+                                android:textSize="18sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/recovered" />
+
+                            <TextView
+                                android:id="@+id/data"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="56dp"
+                                android:layout_marginTop="11dp"
+                                android:fontFamily="@font/ps"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:text="Click to get district wise data"
+                                android:textSize="18sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/hp" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
@@ -133,28 +152,98 @@
                         app:cardElevation="3dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/cardView2">
+                        app:layout_constraintTop_toBottomOf="@+id/cardView2" >
 
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
 
-                        <com.airbnb.lottie.LottieAnimationView
-                            android:layout_width="110dp"
-                            android:layout_height="110dp"
+                            <com.airbnb.lottie.LottieAnimationView
+                                android:id="@+id/loc"
+                                android:layout_width="110dp"
+                                android:layout_height="110dp"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginTop="4dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:lottie_autoPlay="true"
+                                app:lottie_fileName="geofencing.json"
+                                app:lottie_loop="true" />
 
-                            android:paddingLeft="10dp"
-                            app:lottie_autoPlay="true"
-                            app:lottie_fileName="geofencing.json"
-                            app:lottie_loop="true" />
+                            <TextView
+                                android:id="@+id/fence"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/psb"
+                                android:text="VIRTUAL FENCE"
+                                android:textColor="@color/black"
+                                android:textSize="22sp"
+                                app:layout_constraintStart_toEndOf="@+id/loc"
+                                app:layout_constraintTop_toTopOf="parent" />
 
-                        <TextView
-                            android:id="@+id/textView23"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="120dp"
-                            android:layout_marginTop="55dp"
-                            android:fontFamily="@font/psb"
-                            android:text="VIRTUAL FENCE"
-                            android:textColor="@color/black"
-                            android:textSize="22sp" />
+                            <TextView
+                                android:id="@+id/textView17"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="22dp"
+                                android:layout_marginTop="8dp"
+                                android:fontFamily="@font/ps"
+                                android:text="Create virtual fence"
+                                android:textSize="18sp"
+                                app:layout_constraintStart_toEndOf="@+id/loc"
+                                app:layout_constraintTop_toBottomOf="@+id/fence" />
+
+                            <TextView
+                                android:id="@+id/textView18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="22dp"
+                                android:layout_marginTop="2dp"
+                                android:fontFamily="@font/ps"
+                                android:text=" of 50 meters around "
+                                android:textSize="18sp"
+                                app:layout_constraintStart_toEndOf="@+id/loc"
+                                app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+                            <TextView
+                                android:id="@+id/textView19"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="22dp"
+                                android:layout_marginTop="2dp"
+                                android:fontFamily="@font/ps"
+                                android:text="your current location"
+                                android:textSize="18sp"
+                                app:layout_constraintStart_toEndOf="@+id/loc"
+                                app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+                            <TextView
+                                android:id="@+id/textView20"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="22dp"
+                                android:layout_marginTop="2dp"
+                                android:fontFamily="@font/ps"
+                                android:text="inorder to stay in safe"
+                                android:textSize="18sp"
+                                app:layout_constraintStart_toEndOf="@+id/loc"
+                                app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+                            <TextView
+                                android:id="@+id/textView21"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="22dp"
+                                android:layout_marginTop="2dp"
+                                android:fontFamily="@font/ps"
+                                android:text="zone"
+                                android:textSize="18sp"
+                                app:layout_constraintStart_toEndOf="@+id/loc"
+                                app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
@@ -170,29 +259,72 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/cardView3">
+                        app:layout_constraintTop_toBottomOf="@+id/cardView3" >
 
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
 
-                        <com.airbnb.lottie.LottieAnimationView
-                            android:layout_width="110dp"
-                            android:layout_height="110dp"
+                            <com.airbnb.lottie.LottieAnimationView
+                                android:id="@+id/lottieAnimationView3"
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginTop="4dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:lottie_autoPlay="true"
+                                app:lottie_fileName="helpline.json"
+                                app:lottie_loop="true" />
 
-                            android:paddingTop="4dp"
-                            app:lottie_autoPlay="true"
-                            app:lottie_fileName="msg.json"
-                            app:lottie_loop="true" />
+                            <TextView
+                                android:id="@+id/textView22"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/psb"
+                                android:text="HELP DESK"
+                                android:textSize="22sp"
+                                app:layout_constraintStart_toEndOf="@+id/lottieAnimationView3"
+                                app:layout_constraintTop_toTopOf="parent" />
 
+                            <TextView
+                                android:id="@+id/textView23"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/ps"
+                                android:text="Need any help ?"
+                                android:textSize="18sp"
+                                app:layout_constraintStart_toEndOf="@+id/lottieAnimationView3"
+                                app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
-                        <TextView
-                            android:id="@+id/textView22"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="120dp"
-                            android:layout_marginTop="40dp"
-                            android:fontFamily="@font/psb"
-                            android:text="HELPLINE DESK"
-                            android:textColor="@color/black"
-                            android:textSize="22sp" />
+                            <TextView
+                                android:id="@+id/textView24"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="2dp"
+                                android:text="Click to get your "
+                                android:textSize="18sp"
+                                app:layout_constraintStart_toEndOf="@+id/lottieAnimationView3"
+                                app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+                            <TextView
+                                android:id="@+id/textView25"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="24dp"
+                                android:fontFamily="@font/ps"
+                                android:text="queries resolved"
+                                android:textSize="18sp"
+                                app:layout_constraintStart_toEndOf="@+id/lottieAnimationView3"
+                                app:layout_constraintTop_toTopOf="@+id/textView24" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.cardview.widget.CardView>
 
 
@@ -235,7 +367,8 @@
             </ScrollView>
 
 
-    </LinearLayout>
+        </LinearLayout>
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <com.google.android.material.navigation.NavigationView
