@@ -49,43 +49,57 @@
         <activity
             android:name=".MainActivity"
             android:label=""
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
 
 
         </activity>
-        <activity android:name=".AddArticle" />
-        <activity android:name=".ViewArticle" />
+        <activity android:name=".AddArticle"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ViewArticle"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".VerifyPhoneActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".SplashScreen"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UpdateCasesActivity" />
-        <activity android:name=".InfoWeb" />
-        <activity android:name=".HelpActivity" >
+        <activity android:name=".UpdateCasesActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".InfoWeb"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".HelpActivity"
+            android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".Notifications" />
-        <activity android:name=".SendMessage" />
-        <activity android:name=".GetMessage" />
+        <activity android:name=".Notifications"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SendMessage"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".GetMessage"
+            android:screenOrientation="portrait"/>
         <activity android:name=".RegisterActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:screenOrientation="portrait">
         </activity>
-<activity android:name=".FaqActivity"/>
-        <activity android:name=".activity_contributors"/>
+<activity android:name=".FaqActivity"
+    android:screenOrientation="portrait"/>
+        <activity android:name=".activity_contributors"
+            android:screenOrientation="portrait"/>
         <service
             android:name=".GeofenceTransitionService"
             android:enabled="true"
             android:exported="true"
-            android:foregroundServiceType="location" />
+            android:foregroundServiceType="location"
+            />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -97,16 +111,20 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".CasesFragment"/>
-        <activity android:name=".GeofenceActivity" />
-        <activity android:name=".HelpMessegeActivity">
+        <activity android:name=".CasesFragment"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".GeofenceActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".HelpMessegeActivity"
+            android:screenOrientation="portrait">
          <!--   <intent-filter> -->
             <!--       <action android:name="android.intent.action.MAIN" /> -->
 
             <!--  <category android:name="android.intent.category.LAUNCHER" /> -->
             <!--</intent-filter> -->
         </activity>
-        <activity android:name=".AdminDashboard" />
+        <activity android:name=".AdminDashboard"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

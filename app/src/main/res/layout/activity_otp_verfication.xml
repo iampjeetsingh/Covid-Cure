@@ -151,7 +151,7 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/admin_button"
             android:text="Sign In"
-            android:textColor="#2F5AA8"
+            android:textColor="#fff"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.486"
             app:layout_constraintStart_toStartOf="parent"
