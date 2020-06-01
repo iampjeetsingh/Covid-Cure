@@ -80,7 +80,7 @@ public class PhoneActivity extends AppCompatActivity {
             UserInfo providerData = pd.get(1);
             String pid = providerData.getProviderId();
             if (Objects.equals(pid, "password")) {
-                Intent intent = new Intent(this, MainActivity.class);
+                Intent intent = new Intent(this, NewActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 intent.putExtra("type", "Admin");
                 startActivity(intent);

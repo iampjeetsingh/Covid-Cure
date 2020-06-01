@@ -9,6 +9,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -113,7 +114,8 @@ public class VerifyPhoneActivity extends AppCompatActivity {
         String phonenumber = getIntent().getStringExtra("phonenumber");
         sendVerificationCode(phonenumber);
 
-        findViewById(R.id.buttonSignIn).setOnClickListener(v -> {
+        Button buttonSignIn = findViewById(R.id.buttonSignIn);
+        buttonSignIn.setOnClickListener(v -> {
 
             String code = et1.getText().toString().trim()
                     + et2.getText().toString().trim()
@@ -221,6 +223,14 @@ public class VerifyPhoneActivity extends AppCompatActivity {
 
                 verifyCode(code);
             } else {
+
+                et1.setText("1");
+                et2.setText("2");
+                et3.setText("3");
+                et4.setText("4");
+                et5.setText("5");
+                et6.setText("6");
+
                 signInWithCredential(phoneAuthCredential);
             }
         }
