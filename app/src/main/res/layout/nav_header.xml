@@ -1,12 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    style="@style/ThemeOverlay.AppCompat.Dark"
     android:layout_width="match_parent"
     android:layout_height="172dp"
-    android:id="@+id/drawer_layout"
+    android:background="@color/black"
     android:fitsSystemWindows="true"
-    style="@style/ThemeOverlay.AppCompat.Dark"
-    android:orientation="vertical"
-    android:background="@color/colorPrimaryDark">
+    android:orientation="vertical">
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="304dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/psb"
+        android:text="COVID CURE"
+        android:textColor="@color/colorWhite"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.317"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="343dp"
+        android:layout_height="51dp"
+        android:fontFamily="@font/ps"
+        android:text="Every person is a soldier in this battle and also leading the battle."
+        android:textColor="@color/colorWhite"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:layout_constraintVertical_bias="0.315" />
+</androidx.constraintlayout.widget.ConstraintLayout>

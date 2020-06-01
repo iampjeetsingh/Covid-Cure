@@ -44,6 +44,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -74,6 +75,7 @@ public class HelpMessegeActivity extends AppCompatActivity {
     private EditText queryEditText;
 
     private SessionsClient sessionsClient;
+    private DatabaseReference userRef;
     private SessionName session;
 
     public HelpMessegeActivity() {
@@ -449,6 +451,7 @@ public class HelpMessegeActivity extends AppCompatActivity {
 
         editor = preferences.edit();
         editor.putString("Date&Time", dateTime);
+        editor.putBoolean("First Message Sent",true);
         editor.apply();
 /*
         adminRef = FirebaseDatabase.getInstance().getReference().child("User").child("JioUKTzeV5WPsdcU3ckmf8QvghJ3");
@@ -457,6 +460,7 @@ public class HelpMessegeActivity extends AppCompatActivity {
         adminRef.setValue(map);
 
  */
+
     }
 
 }

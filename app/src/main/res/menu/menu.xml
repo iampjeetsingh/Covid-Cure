@@ -6,10 +6,6 @@
             android:icon="@drawable/ic_nav_faq"
             android:title="FAQ" />
         <item
-            android:icon="@drawable/ic_nav_help"
-            android:id="@+id/helpline"
-            android:title="HELPLINE" />
-        <item
             android:icon="@drawable/ic_nav_developers"
             android:id="@+id/developers"
             android:title="DEVELOPERS" />
@@ -17,10 +13,6 @@
             android:icon="@drawable/ic_nav_profile"
             android:id="@+id/edit_prifile"
             android:title="EDIT PROFILE" />
-        <item
-            android:icon="@drawable/ic_nav_settings"
-            android:id="@+id/settings"
-            android:title="SETTINGS" />
 
         <item
             android:icon="@drawable/ic_nav_logout"

@@ -23,7 +23,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         expandableView = findViewById(R.id.expandableView);
         arrowBtn = findViewById(R.id.arrowBtn);
-        cardView = findViewById(R.id.cardView);
+        cardView = findViewById(R.id.helpCard3);
 
         arrowBtn.setOnClickListener(v -> {
             if (expandableView.getVisibility()==View.GONE){

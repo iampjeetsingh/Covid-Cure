@@ -1,11 +1,15 @@
 package com.example.hp_awareness_app;
 
 
+import android.app.ProgressDialog;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -40,12 +44,29 @@ public class CasesFragment extends AppCompatActivity {
     Integer SiA, SiR, SiC, SiD;
     Integer SoA, SoR, SoC, SoD;
     Integer UnA, UnR, UnC, UnD;
-
+    Integer TActive , TRec,TCnf,Tdth;
+    TextView tvA ,tvC ,tvR,tvD;
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cases);
+        tvA = findViewById(R.id.ActiveNo);
+        tvC = findViewById(R.id.confNo);
+        tvR = findViewById(R.id.RecoverNo);
+        tvD = findViewById(R.id.DeathNo);
         GetData();
+        final LoadingDialog loadingDialog = new LoadingDialog(CasesFragment.this);
+        loadingDialog.startLoadingDialog();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                loadingDialog.dismissDialog();
+            }
+        }, 4000);
+
     }
 
     private void GetData() {
@@ -111,7 +132,7 @@ public class CasesFragment extends AppCompatActivity {
                     districtCases.add(new DistrictCases("Kangra", KaA, KaC, kaR, KaD));
                     districtCases.add(new DistrictCases("Kinnaur", kiA, KiC, KiR, KiD));
                     districtCases.add(new DistrictCases("Kullu", KuA, KuC, KuR, KuD));
-                    districtCases.add(new DistrictCases("Lahaul and Spiti", LaA, LaC, LaR, LaD));
+                    districtCases.add(new DistrictCases("Lahaul & Spiti", LaA, LaC, LaR, LaD));
                     districtCases.add(new DistrictCases("Mandi", MaA, MaC, MaR, MaD));
                     districtCases.add(new DistrictCases("Shimla", ShA, ShC, ShR, ShD));
                     districtCases.add(new DistrictCases("Sirmaur", SiA, SiC, SiR, SiD));
@@ -124,6 +145,21 @@ public class CasesFragment extends AppCompatActivity {
                     recyclerView.setLayoutManager(new LinearLayoutManager(CasesFragment.this));
                     recyclerView.setAdapter(adapter);
                     Log.d("Response", "Success" + response.code());
+                    TActive = active+chActive + HaActive+ KaA+kiA+KuA+LaA+MaA+ShA+SiA+SoA+UnA;
+                    TCnf = cnf+chCnf+HaCnf+KaC+KiC+LaC+KuC+MaC+ShC+SiC+SoC+UnC;
+                    TRec = rec+chRec+HaRec+kaR+KiR+KuR+LaR+MaR+ShR+SiR+SoR+UnR;
+                    Tdth = dth+chDth+HaDth+KaD+KiD+KuD+LaD+MaD+ShD+SiD+SoD+UnD;
+
+                    tvA.setText(""+TActive);
+                    tvC.setText(""+TCnf);
+                    tvR.setText(""+TRec);
+                    tvD.setText(""+Tdth);
+
+                    preferences = getSharedPreferences("App",MODE_PRIVATE);
+                    editor = preferences.edit();
+
+                    editor.putInt("Total",TActive+TCnf+TRec+Tdth);
+                    editor.commit();
 
                 }
             }

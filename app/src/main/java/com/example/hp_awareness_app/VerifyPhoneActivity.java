@@ -54,7 +54,8 @@ public class VerifyPhoneActivity extends AppCompatActivity {
         }
         mAuth = FirebaseAuth.getInstance();
 
-        progressBar = findViewById(R.id.progressbar);
+
+        progressBar = findViewById(R.id.progressBar2);
 
         et1 = findViewById(R.id.et_1);
         et2 = findViewById(R.id.et_2);

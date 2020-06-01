@@ -38,9 +38,9 @@
                         android:id="@+id/cardView2"
                         android:layout_width="match_parent"
                         android:layout_height="170dp"
-                        android:layout_marginStart="40dp"
+                        android:layout_marginStart="20dp"
                         android:layout_marginTop="200dp"
-                        android:layout_marginEnd="40dp"
+                        android:layout_marginEnd="20dp"
                         app:cardBackgroundColor="#66b3e5fc"
                         app:cardCornerRadius="24dp"
                         app:cardElevation="3dp"
@@ -70,71 +70,36 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="24dp"
-                                android:layout_marginTop="4dp"
+                                android:layout_marginTop="44dp"
                                 android:fontFamily="@font/psb"
                                 android:paddingLeft="10dp"
                                 android:paddingRight="10dp"
                                 android:text="UPDATES"
                                 android:textColor="@color/black"
                                 android:textSize="22sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.306"
                                 app:layout_constraintStart_toEndOf="@+id/lottieAnimationView2"
                                 app:layout_constraintTop_toTopOf="parent" />
-
-                            <TextView
-                                android:id="@+id/india"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="24dp"
-                                android:layout_marginTop="8dp"
-                                android:fontFamily="@font/ps"
-                                android:paddingLeft="10dp"
-                                android:paddingRight="10dp"
-                                android:text="INDIA : 1,82,490"
-                                android:textSize="20sp"
-                                app:layout_constraintStart_toEndOf="@+id/lottieAnimationView2"
-                                app:layout_constraintTop_toBottomOf="@+id/updates" />
-
-                            <TextView
-                                android:id="@+id/recovered"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="24dp"
-                                android:layout_marginTop="8dp"
-                                android:fontFamily="@font/ps"
-                                android:paddingLeft="10dp"
-                                android:paddingRight="10dp"
-                                android:text="RECOVERED : 82,000"
-                                android:textSize="20sp"
-                                app:layout_constraintStart_toEndOf="@+id/lottieAnimationView2"
-                                app:layout_constraintTop_toBottomOf="@+id/india" />
-
-                            <TextView
-                                android:id="@+id/hp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="104dp"
-                                android:layout_marginTop="8dp"
-                                android:fontFamily="@font/ps"
-                                android:paddingLeft="10dp"
-                                android:paddingRight="10dp"
-                                android:text="HIMACHAL PRADESH : 313"
-                                android:textSize="18sp"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/recovered" />
 
                             <TextView
                                 android:id="@+id/data"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="56dp"
-                                android:layout_marginTop="11dp"
+                                android:layout_marginBottom="36dp"
+                                android:autoSizeMinTextSize="18sp"
+                                android:autoSizeTextType="uniform"
                                 android:fontFamily="@font/ps"
                                 android:paddingLeft="10dp"
                                 android:paddingRight="10dp"
                                 android:text="Click to get district wise data"
                                 android:textSize="18sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.746"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/hp" />
+                                app:layout_constraintTop_toBottomOf="@+id/updates"
+                                app:layout_constraintVertical_bias="0.829" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.cardview.widget.CardView>
@@ -144,9 +109,9 @@
 
                         android:layout_width="match_parent"
                         android:layout_height="170dp"
-                        android:layout_marginStart="40dp"
+                        android:layout_marginStart="20dp"
                         android:layout_marginTop="25dp"
-                        android:layout_marginEnd="40dp"
+                        android:layout_marginEnd="20dp"
                         app:cardBackgroundColor="#66b39ddb"
                         app:cardCornerRadius="24dp"
                         app:cardElevation="3dp"
@@ -175,11 +140,13 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="16dp"
-                                android:layout_marginTop="10dp"
+                                android:layout_marginTop="7dp"
                                 android:fontFamily="@font/psb"
                                 android:text="VIRTUAL FENCE"
                                 android:textColor="@color/black"
                                 android:textSize="22sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.092"
                                 app:layout_constraintStart_toEndOf="@+id/loc"
                                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -192,6 +159,8 @@
                                 android:fontFamily="@font/ps"
                                 android:text="Create virtual fence"
                                 android:textSize="18sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.012"
                                 app:layout_constraintStart_toEndOf="@+id/loc"
                                 app:layout_constraintTop_toBottomOf="@+id/fence" />
 
@@ -204,6 +173,8 @@
                                 android:fontFamily="@font/ps"
                                 android:text=" of 50 meters around "
                                 android:textSize="18sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.028"
                                 app:layout_constraintStart_toEndOf="@+id/loc"
                                 app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
@@ -212,10 +183,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="22dp"
-                                android:layout_marginTop="2dp"
+                                android:layout_marginTop="4dp"
                                 android:fontFamily="@font/ps"
                                 android:text="your current location"
                                 android:textSize="18sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.013"
                                 app:layout_constraintStart_toEndOf="@+id/loc"
                                 app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
@@ -224,35 +197,27 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="22dp"
-                                android:layout_marginTop="2dp"
+                                android:layout_marginTop="4dp"
                                 android:fontFamily="@font/ps"
-                                android:text="inorder to stay in safe"
+                                android:text="inorder to stay safe"
                                 android:textSize="18sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.011"
                                 app:layout_constraintStart_toEndOf="@+id/loc"
-                                app:layout_constraintTop_toBottomOf="@+id/textView19" />
-
-                            <TextView
-                                android:id="@+id/textView21"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="22dp"
-                                android:layout_marginTop="2dp"
-                                android:fontFamily="@font/ps"
-                                android:text="zone"
-                                android:textSize="18sp"
-                                app:layout_constraintStart_toEndOf="@+id/loc"
-                                app:layout_constraintTop_toBottomOf="@+id/textView20" />
+                                app:layout_constraintTop_toBottomOf="@+id/textView19"
+                                app:layout_constraintVertical_bias="0.0" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/cardView"
+                        android:id="@+id/helpCard3"
                         android:layout_width="match_parent"
                         android:layout_height="170dp"
-                        android:layout_marginStart="40dp"
+                        android:layout_marginStart="20dp"
                         android:layout_marginTop="25dp"
-                        android:layout_marginEnd="40dp"
+                        android:layout_marginEnd="20dp"
                         app:cardBackgroundColor="#6680cbc4"
                         app:cardCornerRadius="24dp"
                         app:cardElevation="3dp"
@@ -282,7 +247,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="16dp"
-                                android:layout_marginTop="10dp"
+                                android:layout_marginTop="4dp"
                                 android:fontFamily="@font/psb"
                                 android:text="HELP DESK"
                                 android:textSize="22sp"
@@ -294,10 +259,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="16dp"
-                                android:layout_marginTop="10dp"
+                                android:layout_marginTop="12dp"
                                 android:fontFamily="@font/ps"
                                 android:text="Need any help ?"
                                 android:textSize="18sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
                                 app:layout_constraintStart_toEndOf="@+id/lottieAnimationView3"
                                 app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
@@ -309,6 +276,8 @@
                                 android:layout_marginTop="2dp"
                                 android:text="Click to get your "
                                 android:textSize="18sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
                                 app:layout_constraintStart_toEndOf="@+id/lottieAnimationView3"
                                 app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
@@ -316,13 +285,17 @@
                                 android:id="@+id/textView25"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="16dp"
-                                android:layout_marginTop="24dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginEnd="98dp"
                                 android:fontFamily="@font/ps"
                                 android:text="queries resolved"
                                 android:textSize="18sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="1.0"
                                 app:layout_constraintStart_toEndOf="@+id/lottieAnimationView3"
-                                app:layout_constraintTop_toTopOf="@+id/textView24" />
+                                app:layout_constraintTop_toBottomOf="@+id/textView24"
+                                app:layout_constraintVertical_bias="0.0" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.cardview.widget.CardView>
@@ -353,15 +326,26 @@
                         app:layout_constraintTop_toBottomOf="@+id/welcome" />
 
                     <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/lottieAnimationView4"
                         android:layout_width="120dp"
                         android:layout_height="120dp"
-                        android:layout_marginTop="64dp"
-                        android:layout_marginEnd="27dp"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="68dp"
+                        app:layout_constraintStart_toEndOf="@+id/welcome"
                         app:layout_constraintTop_toTopOf="parent"
                         app:lottie_autoPlay="true"
                         app:lottie_fileName="profileanim.json"
                         app:lottie_loop="true" />
+
+                    <ImageView
+                        android:id="@+id/msgBell"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginTop="56dp"
+                        app:layout_constraintStart_toEndOf="@+id/lottieAnimationView4"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_notifications_active_black_24dp" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </ScrollView>

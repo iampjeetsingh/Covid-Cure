@@ -61,7 +61,7 @@
 
                 android:layout_marginEnd="40dp"
                 android:layout_marginRight="40dp"
-                android:background="@drawable/custom_button"
+                android:background="@drawable/edittext_corners"
                 android:hint="Your Phone Number"
                 android:inputType="phone"
                 android:padding="10dp"
