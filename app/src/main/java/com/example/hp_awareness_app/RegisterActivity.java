@@ -137,24 +137,26 @@ public class RegisterActivity extends AppCompatActivity {
             });
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             dialog.show();
-        }
-        Map<String,Object> objectMap = new HashMap<>();
-        objectMap.put("name",name);
-        objectMap.put("age",age);
-        objectMap.put("phone",phone);
-        objectMap.put("address",address);
-        objectMap.put("gender", gender==1 ? "M" : "F");
-        objectMap.put("travelled", travelStatus == 1);
-        objectMap.put("quarantineStatus",qStatus);
-        objectMap.put("quarantineType",quartype);
-        objectMap.put("placesTravelled",places);
-        String uid = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
-        FirebaseDatabase.getInstance().getReference().child("Users").child(uid).setValue(objectMap);
+        }else{
+            Map<String,Object> objectMap = new HashMap<>();
+            objectMap.put("name",name);
+            objectMap.put("age",age);
+            objectMap.put("phone",phone);
+            objectMap.put("address",address);
+            objectMap.put("gender", gender==1 ? "M" : "F");
+            objectMap.put("travelled", travelStatus == 1);
+            objectMap.put("quarantineStatus",qStatus);
+            objectMap.put("quarantineType",quartype);
+            objectMap.put("placesTravelled",places);
+            String uid = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
+            FirebaseDatabase.getInstance().getReference().child("Users").child(uid).setValue(objectMap);
 
-        Intent intent = new Intent(RegisterActivity.this, NewActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        intent.putExtra("type", "User");
-        startActivity(intent);
+            Intent intent = new Intent(RegisterActivity.this, NewActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            intent.putExtra("type", "User");
+            startActivity(intent);
+        }
+
     }
 
 
