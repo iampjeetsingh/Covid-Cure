@@ -19,20 +19,20 @@
             android:layout_height="match_parent">
 
 
-            <ImageView
+     <!--       <ImageView
                 android:id="@+id/imageViewSplash"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/v1"
-                android:src="@drawable/v1" />
+                android:background="#000"
+                android:src="@drawable/v1" />-->
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/lottieAnimationView"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_centerInParent="true"
                 app:lottie_autoPlay="true"
-                app:lottie_fileName="virusexpo.json"
+                app:lottie_fileName="vivi.json"
                 app:lottie_loop="true" />
 
         </RelativeLayout>
