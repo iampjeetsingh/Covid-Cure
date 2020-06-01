@@ -18,14 +18,15 @@
             android:id="@+id/et_1"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="28dp"
             android:background="@color/grey_back"
             android:ems="10"
             android:gravity="center"
             android:inputType="phone"
             android:textSize="20sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/et_2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -35,14 +36,15 @@
 
             android:layout_height="40dp"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="30dp"
-            android:background="@color/grey_back"
+            android:layout_marginTop="28dp"
 
+            android:background="@color/grey_back"
             android:ems="10"
             android:gravity="center"
             android:inputType="phone"
             android:textSize="20sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/et_3"
             app:layout_constraintStart_toEndOf="@+id/et_1"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -53,13 +55,14 @@
             android:layout_height="40dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="30dp"
-            android:background="@color/grey_back"
 
+            android:background="@color/grey_back"
             android:ems="10"
             android:gravity="center"
             android:inputType="phone"
             android:textSize="20sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/et_4"
             app:layout_constraintStart_toEndOf="@+id/et_2"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -70,13 +73,14 @@
             android:layout_height="40dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="30dp"
-            android:background="@color/grey_back"
 
+            android:background="@color/grey_back"
             android:ems="10"
             android:gravity="center"
             android:inputType="phone"
             android:textSize="20sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/et_5"
             app:layout_constraintStart_toEndOf="@+id/et_3"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -87,13 +91,14 @@
             android:layout_height="40dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="30dp"
-            android:background="@color/grey_back"
 
+            android:background="@color/grey_back"
             android:ems="10"
             android:gravity="center"
             android:inputType="phone"
             android:textSize="20sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/et_6"
             app:layout_constraintStart_toEndOf="@+id/et_4"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -104,9 +109,9 @@
             android:layout_height="40dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="30dp"
-            android:layout_marginEnd="50dp"
-            android:background="@color/grey_back"
+            android:layout_marginEnd="40dp"
 
+            android:background="@color/grey_back"
             android:ems="10"
             android:gravity="center"
             android:inputType="phone"
@@ -118,29 +123,35 @@
 
         <TextView
             android:id="@+id/textView10"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
 
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="116dp"
+            android:layout_marginEnd="50dp"
             android:fontFamily="@font/psb"
+            android:paddingLeft="45dp"
             android:text="ENTER OTP"
             android:textColor="#2F5AA8"
-            android:textSize="45sp"
+            android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="20dp"
             android:fontFamily="@font/psb"
+            android:paddingLeft="18dp"
             android:text="Enter the verification code sent."
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView10" />
 

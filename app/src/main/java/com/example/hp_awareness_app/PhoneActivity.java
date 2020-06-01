@@ -40,14 +40,14 @@ public class PhoneActivity extends AppCompatActivity {
       //  spinner = findViewById(R.id.spinnerCountries);
      //  spinner.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, CountryData.countryNames));
 
-        editText = findViewById(R.id.editTextPhone);
+        editText = findViewById(R.id.et_phone_number);
 
-        findViewById(R.id.btnAdminLogin).setOnClickListener(v -> {
+        findViewById(R.id.button4).setOnClickListener(v -> {
             Intent intent = new Intent(PhoneActivity.this, AdminLoginActivity.class);
             startActivity(intent);
         });
 
-        findViewById(R.id.buttonContinue).setOnClickListener(v -> {
+        findViewById(R.id.button3).setOnClickListener(v -> {
 
             String number = editText.getText().toString().trim();
 

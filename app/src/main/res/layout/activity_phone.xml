@@ -2,110 +2,79 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#86DFFF"
-    tools:context=".MainActivity">
+    android:background="@drawable/background"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
 
-
-    <ImageView
-        android:layout_width="225dp"
-        android:layout_height="235dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="150dp"
-        android:background="@drawable/signin"
-        android:scaleType="fitXY"
+    <TextView
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/psb"
+        android:gravity="center_horizontal"
+        android:text="REGISTER"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.34" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/relativeLayout2"
-        android:layout_width="416dp"
-        android:layout_height="451dp"
-        android:background="#b9ecff"
+    <EditText
+        android:id="@+id/et_phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/edittext_corners"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/ps"
         android:gravity="center"
-        android:paddingTop="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:hint="Enter Number"
+        android:inputType="number"
+        android:paddingLeft="32dp"
+        android:paddingTop="8dp"
+        android:paddingRight="32dp"
+        android:paddingBottom="8dp"
+        android:textColor="@color/black"
+        android:textColorHint="#bbb"
+        android:textSize="18sp"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login" />
 
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/edittext_corners"
+        android:text="LOGIN"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_phone_number" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="48dp"
+        android:background="@drawable/edittext_corners"
+        android:text="ADMIN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_phone_number" />
 
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="56dp"
-                android:layout_height="52dp"
-                android:layout_marginStart="40dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_phone" />
-
-            <EditText
-                android:id="@+id/editTextPhone"
-                android:layout_width="266dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="10dp"
-
-                android:layout_marginEnd="40dp"
-                android:layout_marginRight="40dp"
-                android:background="@drawable/edittext_corners"
-                android:hint="Your Phone Number"
-                android:inputType="phone"
-                android:padding="10dp"
-                android:textSize="17sp" />
-
-        </LinearLayout>
-
-
-        <Button
-            android:id="@+id/buttonContinue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/admin_button"
-            android:fontFamily="@font/amiko_bold"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:text="LOGIN"
-            android:textColor="#86c1ff"
-            android:textSize="21sp"
-            app:layout_constraintBottom_toTopOf="@+id/btnAdminLogin"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/btnAdminLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginBottom="80dp"
-            android:background="@drawable/admin_button"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:text="LOGIN AS ADMIN"
-            android:textColor="#86c1ff"
-            android:textSize="21sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
