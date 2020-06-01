@@ -53,10 +53,12 @@
             android:backgroundTint="@color/colorWhite"
             android:visibility="gone"
             app:srcCompat="@drawable/ic_forum_black_24dp" />
+
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardCornerRadius="20dp"
+
 
             android:background="@drawable/bot_bg_bubble"
             app:cardBackgroundColor="@color/colorWhite">

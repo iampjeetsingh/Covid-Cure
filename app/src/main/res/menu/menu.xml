@@ -15,6 +15,16 @@
             android:title="EDIT PROFILE" />
 
         <item
+            android:icon="@drawable/ic_nav_developers"
+            android:id="@+id/admin_dashboard"
+            android:title="ADMIN DASHBOARD" />
+
+        <item
+            android:icon="@drawable/ic_nav_profile"
+            android:id="@+id/admin_add"
+            android:title="ADD ADMIN" />
+
+        <item
             android:icon="@drawable/ic_nav_logout"
             android:id="@+id/logout"
             android:title="LOGOUT" />

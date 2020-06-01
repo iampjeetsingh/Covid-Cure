@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.MenuRes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,6 +34,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class NewActivity extends AppCompatActivity {
     Toolbar toolbar;
@@ -50,18 +54,59 @@ public class NewActivity extends AppCompatActivity {
     Integer Total;
     TextView hp;
 
+    HashMap<String, Object> map;
+    static String type = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nav_drawer);
         toolbar = findViewById(R.id.mytoolbar);
         drawerLayout = findViewById(R.id.drawer);
+        type = getIntent().getStringExtra("type");
        // hp = findViewById(R.id.hp);
         setSupportActionBar(toolbar);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.app_name, R.string.app_name);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
         navigationView = findViewById(R.id.nav_view);
+        Menu menu = navigationView.getMenu();
+
+        MenuItem add_item = menu.findItem(R.id.admin_add);
+
+        if (Objects.equals(type, "Admin")) {
+            add_item.setVisible(true);
+        } else {
+            add_item.setVisible(false);
+        }
+
+        MenuItem dashboard = menu.findItem(R.id.admin_dashboard);
+
+        if (Objects.equals(type, "Admin")) {
+            dashboard.setVisible(true);
+        } else {
+            dashboard.setVisible(false);
+        }
+
+
+        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        FirebaseDatabase.getInstance().getReference().child("Users").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                map = (HashMap<String, Object>) dataSnapshot.getValue();
+                if (map != null) {
+                    TextView nameTV = findViewById(R.id.user);
+                    nameTV.setText(String.valueOf(map.get("name")));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("Register",databaseError.getMessage());
+            }
+        });
+
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -75,6 +120,12 @@ public class NewActivity extends AppCompatActivity {
                         break;
                     case R.id.edit_prifile:
                         startActivity(new Intent(NewActivity.this,RegisterActivity.class));
+                        break;
+                    case R.id.admin_add:
+                        startActivity(new Intent(NewActivity.this,AddAdminActivity.class));
+                        break;
+                    case R.id.admin_dashboard:
+                        startActivity(new Intent(NewActivity.this,AdminDashboard.class));
                         break;
                     case R.id.logout:
                         FirebaseAuth.getInstance().signOut();
@@ -183,6 +234,7 @@ public class NewActivity extends AppCompatActivity {
         dialog.show();
 
     }
+
     public void adminDashClick(View v){
         startActivity(new Intent(NewActivity.this,AdminDashboard.class));
     }
