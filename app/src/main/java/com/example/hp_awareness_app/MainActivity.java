@@ -124,12 +124,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     }
 
 
-    FirstFragment firstFragment = new FirstFragment();
-    ArticlesFragment articlesFragment = new ArticlesFragment();
+
+
     SymptomsFragment symptomsFragment = new SymptomsFragment();
     MessegeFragment messegeFragment = new MessegeFragment();
     LocationFragment locationFragment = new LocationFragment();
-    CovidUpdatesFragment covidUpdatesFragment = new CovidUpdatesFragment();
+
     GeofenceFragment geofenceFragment = new GeofenceFragment();
     CasesFragment casesFragment = new CasesFragment();
 
@@ -152,10 +152,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         switch (menuItem.getItemId()) {
             case R.id.item1:
-                getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out).replace(R.id.fragment_container, firstFragment).commit();
+                getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out).replace(R.id.fragment_container, geofenceFragment).commit();
                 return true;
             case R.id.item2:
-                getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out).replace(R.id.fragment_container, articlesFragment).commit();
+                getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out).replace(R.id.fragment_container,geofenceFragment).commit();
                 return true;
             case R.id.item3:
                 getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out).replace(R.id.fragment_container, geofenceFragment).commit();
@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out).replace(R.id.fragment_container, geofenceFragment).commit();
                 return true;
             default:
-                getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out).replace(R.id.fragment_container, firstFragment).commit();
+                getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out).replace(R.id.fragment_container, geofenceFragment).commit();
                 return true;
 
 

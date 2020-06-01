@@ -22,7 +22,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".register_user"></activity>
         <activity android:name=".ProfileActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -54,10 +53,6 @@
 
 
         </activity>
-        <activity android:name=".AddArticle"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ViewArticle"
-            android:screenOrientation="portrait"/>
         <activity
             android:name=".VerifyPhoneActivity"
             android:theme="@style/AppTheme.NoActionBar"
@@ -72,19 +67,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UpdateCasesActivity"
-            android:screenOrientation="portrait"/>
         <activity android:name=".InfoWeb"
             android:screenOrientation="portrait"/>
-        <activity android:name=".HelpActivity"
-            android:screenOrientation="portrait">
-
-        </activity>
         <activity android:name=".Notifications"
             android:screenOrientation="portrait"/>
         <activity android:name=".SendMessage"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".GetMessage"
             android:screenOrientation="portrait"/>
         <activity android:name=".RegisterActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
