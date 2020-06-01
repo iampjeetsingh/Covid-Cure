@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
@@ -12,8 +13,10 @@
 
     <TextView
         android:id="@+id/textView10"
-        android:layout_width="304dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/psb"
         android:text="COVID CURE"
@@ -26,9 +29,11 @@
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="343dp"
-        android:layout_height="51dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/ps"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:text="Every person is a soldier in this battle and also leading the battle."
         android:textColor="@color/colorWhite"
         android:textSize="17sp"
