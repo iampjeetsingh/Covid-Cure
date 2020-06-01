@@ -113,7 +113,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
         String phonenumber = getIntent().getStringExtra("phonenumber");
         sendVerificationCode(phonenumber);
 
-        findViewById(R.id.buttonSignIn).setOnClickListener(v -> {
+        findViewById(R.id.button3).setOnClickListener(v -> {
 
             String code = et1.getText().toString().trim()
                     + et2.getText().toString().trim()
