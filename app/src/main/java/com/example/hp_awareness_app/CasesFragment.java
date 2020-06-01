@@ -144,6 +144,7 @@ public class CasesFragment extends AppCompatActivity {
                     BilaspurAdapter adapter = new BilaspurAdapter(districtCases, CasesFragment.this);
                     recyclerView.setLayoutManager(new LinearLayoutManager(CasesFragment.this));
                     recyclerView.setAdapter(adapter);
+                    recyclerView.setNestedScrollingEnabled(false);
                     Log.d("Response", "Success" + response.code());
                     TActive = active+chActive + HaActive+ KaA+kiA+KuA+LaA+MaA+ShA+SiA+SoA+UnA;
                     TCnf = cnf+chCnf+HaCnf+KaC+KiC+LaC+KuC+MaC+ShC+SiC+SoC+UnC;

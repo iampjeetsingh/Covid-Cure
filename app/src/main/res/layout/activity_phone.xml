@@ -51,7 +51,7 @@
                 android:layout_marginStart="40dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/phoneicon" />
+                app:srcCompat="@drawable/ic_phone" />
 
             <EditText
                 android:id="@+id/editTextPhone"

@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
 android:id="@+id/phnImage"
             android:layout_height="wrap_content"
-            android:background="@drawable/phone_png" />
+           />
     </LinearLayout>
 
     <RelativeLayout
