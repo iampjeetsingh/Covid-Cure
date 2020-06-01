@@ -29,6 +29,7 @@
 
 
         <EditText
+            android:textColor="@android:color/black"
             android:id="@+id/recentPlace"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
@@ -48,6 +49,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:textColor="@android:color/black"
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -92,6 +94,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
         <TextView
+            android:textColor="@android:color/black"
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
