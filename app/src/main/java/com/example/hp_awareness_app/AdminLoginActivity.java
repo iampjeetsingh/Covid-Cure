@@ -82,7 +82,7 @@ public class AdminLoginActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);
 
-                        Intent intent = new Intent(AdminLoginActivity.this, MainActivity.class);
+                        Intent intent = new Intent(AdminLoginActivity.this, NewActivity.class);
                         intent.putExtra("type", "Admin");
                         startActivity(intent);
                     }
