@@ -182,35 +182,13 @@
                 app:layout_constraintStart_toEndOf="@+id/imageView9"
                 app:layout_constraintTop_toBottomOf="@+id/radioFemale" />
 
-            <ImageButton
-                android:id="@+id/fetchAddress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
-                android:background="@drawable/edittext"
-                app:layout_constraintStart_toStartOf="@+id/regAddress"
-                app:layout_constraintTop_toBottomOf="@+id/regAddress"
-                app:srcCompat="@drawable/location_register" />
-
             <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
-                android:layout_marginTop="7dp"
-                android:text="Use current location"
-                android:textColor="#8fb1b9"
-                android:textSize="18sp"
-                app:layout_constraintStart_toEndOf="@+id/fetchAddress"
-                app:layout_constraintTop_toBottomOf="@+id/regAddress" />
-
-            <TextView
-                android:layout_marginLeft="20dp"
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="48dp"
                 android:background="@drawable/edittext_corners"
                 android:backgroundTint="@color/clr_grey_text_transparent"
                 android:fontFamily="@font/ps"
@@ -222,7 +200,7 @@
                 android:textColor="#8fb1b9"
                 android:textSize="18sp"
                 app:layout_constraintStart_toEndOf="@+id/imageView10"
-                app:layout_constraintTop_toBottomOf="@+id/fetchAddress" />
+                app:layout_constraintTop_toBottomOf="@+id/regAddress" />
 
             <RadioButton
                 android:id="@+id/radioTravelYes"
@@ -299,13 +277,13 @@
                 app:srcCompat="@drawable/ic_location" />
 
             <ImageView
-                android:layout_marginLeft="20dp"
                 android:id="@+id/imageView10"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="48dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/imageView9"
                 app:srcCompat="@drawable/ic_travel" />
 
             <ImageView
