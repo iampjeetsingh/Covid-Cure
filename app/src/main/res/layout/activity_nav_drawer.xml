@@ -270,7 +270,8 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginLeft="10dp"
-                            android:text="Developed by IIIT Una App Team" />
+                            android:fontFamily="@font/ps"
+                            android:text="Developed by App Team IIITU" />
                     </LinearLayout>
 
                     <TextView
